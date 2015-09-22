@@ -8,9 +8,6 @@ class MainController < ApplicationController
 
 
 # CALLBACK_URL = "http://localhost:3000"
-	def index
-
-	end
 
 
 # 	get '/' do
@@ -23,6 +20,9 @@ class MainController < ApplicationController
 	end
 
 	def contact
+	end
+
+	def post
 	end
 
 
