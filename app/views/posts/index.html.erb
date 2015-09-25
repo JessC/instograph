@@ -1,6 +1,9 @@
-<h1>HI</h1>
+<h1>PICTURE INDEX PAGE</h1>
+<a class="btn btn-default" href="posts/new" role="button">Upload a Picture</a>
+
+<br>
 
 <% @posts.each do |post| %>
-  <%= image_tag post.image.url(:medium) %>
+  <%= image_tag post.image.url(:medium) %><p>
   <%= post.caption %>
 <% end %>

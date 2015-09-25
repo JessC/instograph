@@ -23,3 +23,8 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+  # client_id: 714ec5ab06844d288ee1637fcb8db711
+
+
+# client_secret: b3e732b64ea341a9b45dd4625619fb7e

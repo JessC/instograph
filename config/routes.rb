@@ -9,12 +9,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'main#index'
 
-  get 'posts/new' => "posts#new", as: :posts
+  # get 'posts/new' => "posts#new", as: :posts
 
   get 'main/about' => "main#about", as: :about
  
   get 'main/contact' => "main#contact", as: :contact
 
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -25,6 +26,14 @@ Rails.application.routes.draw do
   #   resources :products
 
   resources :posts  #<- THE 's' NEEDS TO BE THERE
+
+  resources :map
+
+   get 'map/oauth/callback' => 'map/oauth#callback', as: :callback
+
+  resources :sessions
+
+
 
   # Example resource route with options:
   #   resources :products do
