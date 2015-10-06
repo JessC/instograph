@@ -27,10 +27,11 @@ Rails.application.routes.draw do
 
   resources :posts  #<- THE 's' NEEDS TO BE THERE
 
+   get 'map/landing' => 'map#landing', as: :landing
+
+   get 'map/callback' => 'map#callback', as: :callback
+
   resources :map
-
-   get 'map/oauth/callback' => 'map/oauth#callback', as: :callback
-
   resources :sessions
 
 
