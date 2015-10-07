@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   resources :posts  #<- THE 's' NEEDS TO BE THERE
 
-   get 'map/landing' => 'map#landing', as: :landing
+   get 'map/connect' => 'map#connect', as: :connect
 
    get 'map/callback' => 'map#callback', as: :callback
 
