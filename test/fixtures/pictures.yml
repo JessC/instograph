@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  date: 2015-10-06
+  thumbnail: MyString
+  standard_res: MyString
+  latitude: MyString
+  longitude: MyString
+  insta_id: MyString
+
+two:
+  user_id: 
+  date: 2015-10-06
+  thumbnail: MyString
+  standard_res: MyString
+  latitude: MyString
+  longitude: MyString
+  insta_id: MyString
