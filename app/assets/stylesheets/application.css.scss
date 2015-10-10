@@ -1,9 +1,25 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html, body { 
+height: 100%; margin: 0; padding: 0 
+
+}
+#map-div { 
+height: 80%; width: 80%; 
+margin:auto;
+}
+
 body {  
   background-color: #fafafa;
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+}
+
+li { 
+  list-style: none;
 }
 
 .navbar-brand {
@@ -78,3 +94,132 @@ body {
   margin-top: 20px;
   margin-bottom: 40px;
 }
+
+
+/*.test {
+  border: 1px solid red;
+}*/
+
+.bottom{
+  padding: 0;
+  margin: 0;
+  background-color: #BBCAF8;
+}
+
+.profile_pic {
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+
+.dsp-tb {
+  display: table;
+}
+
+.dsp-cel {
+  display: table-cell;
+}
+
+#profile_pic {
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+nav a {
+  color: inherit;
+}
+
+/*.nav {
+  padding-top: 1.4%;
+}*/
+
+.nav_wrapper {
+  height: 150px;
+  width: 100%;
+  display: inline-block;
+}
+
+.vrt-algn {
+  vertical-align: middle;
+}
+
+.pos-rl {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.pd-23 {
+  padding: 23%;
+}
+
+.pd-10 {
+  padding: 10%;
+}
+
+.top-50 {
+  top: 50%;
+}
+
+.lft-50 {
+  left: 50%;
+}
+
+.wd-13 {
+  width: 100%;
+}
+
+.mrgn-rt {
+  text-align: center;
+}
+
+.full-ht {
+  height: 100%;
+}
+
+.ht-20{
+  height: 20%;
+}
+
+.full-wd {
+  width: 100%;
+}
+
+.ht-inhrt {
+  height: inherit;
+}
+
+html{
+//    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+#logo {
+  display: inline-block;
+  position: relative;
+  right: 15%;
+  height:150px;
+  width:270px;
+}
+
+.gmnoprint a, .gmnoprint span {
+  display:none;
+}
+
+.pic_info {
+  font-family: 'Arial Rounded MT Bold';
+}
+
+input[type="button"] {
+  font-family: 'Arial Rounded MT Bold';
+// background-color: #BFC6DD;
+// color: white;
+  border-radius: 15px;
+  position: relative;
+  height: inherit;
+}
+
+

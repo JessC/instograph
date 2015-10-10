@@ -1,12 +1,11 @@
 class MapController < ApplicationController
 
 	CALLBACK_URL = "http://localhost:3000/map/callback"
-# 2. CALLBACK - routes here after user give oauth info
+# 2. CALLBACK - routes here after user give oauth info to instagram
 
 	def connect
 		redirect_to Instagram.authorize_url(:redirect_uri => CALLBACK_URL)
-# 1. ask for user to login to instagram upon navigating to this page
-			#***MAYBE ADD TO INDEX***
+# 1. ask for user to login to instagram upon navigating to this page by clicking map
 	end
 
 	def callback
@@ -19,7 +18,6 @@ class MapController < ApplicationController
 	end
 
 	def index
-
 		client = Instagram.client(access_token: session[:access_token])
 		@user = client.user
 		@first_visit
@@ -47,6 +45,7 @@ class MapController < ApplicationController
 
 	end
 
+
 	# protected
 
 	# def authenticate
@@ -54,6 +53,21 @@ class MapController < ApplicationController
 	# 		client_id == APP_CONFIG['client_id'] && client_secret == APP_CONFIG['client_secret']
 	# 	end
 	# end
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # get "/user_recent_media" do
@@ -170,5 +184,3 @@ class MapController < ApplicationController
 
 #   html
 # end
-
-end

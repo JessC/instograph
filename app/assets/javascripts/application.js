@@ -16,3 +16,20 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+
+//********************************************************
+//CREATES MAP CANVAS ON THE PAGE
+function initialize() {
+  var mapCanvas = document.getElementById('map-div');
+  
+  //OPTIIONS THAT MAP WILL START WITH
+  var mapOptions = {
+    center: new google.maps.LatLng(44.5403, -78.5463),
+    zoom: 8,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  //STARTS A NEW MAP "CANVAS" WITH "OPTIONS"
+  var map = new google.maps.Map(mapCanvas, mapOptions)
+}
+//********************************************************
+

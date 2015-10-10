@@ -1,0 +1,11 @@
+*****NOTES*****
+
+Features:
+1. Upload pics of a similiar theme and render in view similar to Instagram
+	-add delete function if it's your pic(possibly)
+
+2. Search memeber by Instagram ID and view all pics in full size format...add download button
+
+3. View last 100 pics from friends in a map interface where pic will be located on map according to GPS data
+
+4. 
