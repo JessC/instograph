@@ -28,27 +28,27 @@
 
 // function initMap(){
   // Specify features and elements to define styles.
-  var styleArray = [
-    {
-      featureType: "all",
-      stylers: [
-       { saturation: -80 }
-      ]
-    },{
-      featureType: "road.arterial",
-      elementType: "geometry",
-      stylers: [
-        { hue: "#00ffee" },
-        { saturation: 50 }
-      ]
-    },{
-      featureType: "poi.business",
-      elementType: "labels",
-      stylers: [
-        { visibility: "off" }
-      ]
-    }
-  ];
+  // var styleArray = [
+  //   {
+  //     featureType: "all",
+  //     stylers: [
+  //      { saturation: -80 }
+  //     ]
+  //   },{
+  //     featureType: "road.arterial",
+  //     elementType: "geometry",
+  //     stylers: [
+  //       { hue: "#00ffee" },
+  //       { saturation: 50 }
+  //     ]
+  //   },{
+  //     featureType: "poi.business",
+  //     elementType: "labels",
+  //     stylers: [
+  //       { visibility: "off" }
+  //     ]
+  //   }
+  // ];
 
   
 // Create a map object and specify the DOM element for display.
@@ -56,9 +56,9 @@
   var myOptions = {
       center: latlng,
       scrollwheel: false,
-      styles: styleArray,
-      zoom: 8
-      // mapTypeId: google.maps.MapTypeId.ROADMAP,
+      // styles: styleArray,
+      zoom: 8,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
   };
 
   //STARTS A NEW MAP "CANVAS" WITH "OPTIONS"
@@ -145,21 +145,22 @@ function initialize() {
 $(document).ready(function() {
 
   function getUserPics(event){
+
     event.preventDefault();
     $.ajax({
       method: 'GET',
       url: 'map/usersfeed',
       dataType: 'JSON',
     })
-    .done(function(data){
+    .done(function(data) {
       populateMap(data);
-      console.log( "Successfully got my own data after button click! :)" );
+      console.log("Successfully got my data on click!!")
     })
-    .fail(function() {
-      console.log( "Failed to get my own data on button click :(" );
+    .fail(function(data){
+      console.log( "Failed to get my data on click :(" );
       console.log(JSON.stringify(data));
-    });
-  }
+    })
+}
 
   function getNewsFeed(event){
     
@@ -175,7 +176,7 @@ $(document).ready(function() {
       .fail(function(data){
         console.log( "Failed to get my own data on button initialize :(" );
         console.log(JSON.stringify(data));
-      });
+      })
   }
   // function currentLocation(){
   //   if (navigator.geolocation){
@@ -207,7 +208,7 @@ $(document).ready(function() {
   // }
 
 
-  $("#profile_pic").on("click", getUserPics);
+  $("#users_feed").on("click", getUserPics);
   $("#news_feed").on("click", getNewsFeed);
   // $("#center").on("click", currentLocation);
 });

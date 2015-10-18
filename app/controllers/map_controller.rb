@@ -116,11 +116,11 @@ def mediafeed
 
   count = 0
   next_max_id = nil
-  while image_container.count < 10 do
+  while image_container.count < 100 do
     if next_max_id != nil
-      current_page = client.user_media_feed({count: 5, max_id: next_max_id})
+      current_page = client.user_media_feed({count: 33, max_id: next_max_id})
     else
-      current_page = client.user_media_feed({count: 5})
+      current_page = client.user_media_feed({count: 33})
     end
     next_max_id = current_page.pagination.next_max_id
     current_page.each do |image|

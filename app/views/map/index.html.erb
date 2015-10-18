@@ -8,22 +8,26 @@
       <div class="col span-2-d span-2-t test">
         <img id="profile_pic" src="<%=@user.profile_picture%>"/>
       </div>
-      <% if @first_visit==true %>
+      <% if @first_visit == true %>
         <div class="col span-2-d span-2-t test">
           <p>click on your profile picture to return to your gallery</p>
         </div>
 
         <div>
-            <input id="news_feed" class="full-ht " type="button" value="PIC FEED"/>
+            <input id="news_feed" class="full-ht " type="button" value="FRIENDS PICS"/>
         </div>
 
       <% else %>
 
         <div>
-            <input id="news_feed" class="full-ht pos-rl" type="button" value="PIC FEED"/>
+            <input id="news_feed" class="full-ht pos-rl" type="button" value="FRIENDS PICS"/>
         </div>
 
       <% end %>
+
+      <div>
+            <input id="users_feed" class="full-ht pos-rl" type="button" value="MY PICS"/>
+        </div>
 
       <div>
           <input id="center" class="pos-rl full-ht" type="button" value="MY LOCATION"/>
