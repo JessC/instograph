@@ -32,6 +32,10 @@ Rails.application.routes.draw do
 
    get 'map/callback' => 'map#callback', as: :callback
 
+   get 'map/usersfeed' => 'map#usersfeed', as: :usersfeed
+  
+   get 'map/mediafeed' => 'map#mediafeed', as: :mediafeed
+
   resources :map
   resources :sessions
 

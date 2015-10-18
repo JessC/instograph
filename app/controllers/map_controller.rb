@@ -41,9 +41,158 @@ class MapController < ApplicationController
 
 
 
-	def show
 
-	end
+# # return array with all the images in user media
+def usersfeed
+	p "**users feed**"*15
+  client = Instagram.client(:access_token => session[:access_token])
+  user = client.user
+#    html = "<h1>#{user.username}'s media feed</h1>"
+
+#   page_1 = client.user_media_feed(777)
+#   page_2_max_id = page_1.pagination.next_max_id
+#   page_2 = client.user_recent_media(777, :max_id => page_2_max_id ) unless page_2_max_id.nil?
+#   html << "<h2>Page 1</h2><br/>"
+#   for media_item in page_1
+#     html << "<img src='#{media_item.images.thumbnail.url}'>"
+#   end
+#   html << "<h2>Page 2</h2><br/>"
+#   for media_item in page_2
+#     html << "<img src='#{media_item.images.thumbnail.url}'>"
+#   end
+#   html
+# end
+
+# get "/users/self/feed" do
+
+#   client = Instagram.client(access_token: session[:access_token])
+#   user = client.user
+
+  image_container = []
+  count = 0
+  next_max_id = nil
+  while count < user.counts.media do
+    if next_max_id != nil
+      current_page = client.user_recent_media(user.id, {count: 33, max_id: next_max_id})
+    else
+      current_page = client.user_recent_media(user.id, {count: 33})
+    end
+    next_max_id = current_page.pagination.next_max_id
+    current_page.each do |image|
+      if image["location"]
+        if image["location"]["latitude"]
+        image_container << {
+          url: image.images.standard_resolution.url,
+          thumbnail: image.images.thumbnail.url,
+          location: image.location,
+          tags: image.tags,
+          username: image.user.username,
+          }
+        end
+      end
+    end
+    p "current page count is:"
+    count += current_page.count
+  end
+  p "THIS IS MY JSON RESPONSE"
+  p image_container.to_json
+  	respond_to do |format|
+			if image_container
+			    format.json { render :json => image_container }
+			    format.html {redirect_to '/'}
+			else
+			    format.html { redirect_to map }
+          format.json { render :json => image_container.errors.full_messages, :status => :unprocessable_entity }
+			end
+		end
+end
+
+# return array with first 100 geotagged images of news feed
+def mediafeed 
+		puts "**media feed**"*15
+  client = Instagram.client(:access_token => session[:access_token])
+  user = client.user
+  image_container = []
+
+  count = 0
+  next_max_id = nil
+  while image_container.count < 10 do
+    if next_max_id != nil
+      current_page = client.user_media_feed({count: 5, max_id: next_max_id})
+    else
+      current_page = client.user_media_feed({count: 5})
+    end
+    next_max_id = current_page.pagination.next_max_id
+    current_page.each do |image|
+      pp image
+      if image["location"]
+        if image["location"]["latitude"]
+        image_container << {
+          url: image.images.standard_resolution.url,
+          thumbnail: image.images.thumbnail.url,
+          location: image.location,
+          tags: image.tags,
+          username: image.user.username,
+          }
+        end
+      end
+    end
+    count += current_page.count
+    p "current page count is:"
+    p count
+  end
+	p "THIS IS MY JSON CONTAINER"
+  p image_container.to_json
+	respond_to do |format|
+			if image_container
+			      format.json { render :json => image_container }
+			      format.html {redirect_to '/'}
+			else
+			 format.html { redirect_to map }
+       format.json { render :json => image_container.errors.full_messages, :status => :unprocessable_entity }
+			end
+		end
+end
+
+# REFERENCE:
+# get "/user_search" do
+#   client = Instagram.client(:access_token => session[:access_token])
+#   html = "<h1>Search for users on instagram, by name or usernames</h1>"
+#   for user in client.user_search("instagram")
+#     html << "<li> <img src='#{user.profile_picture}'> #{user.username} #{user.full_name}</li>"
+#   end
+#   html
+# end
+
+# get "/location_search" do
+#   client = Instagram.client(:access_token => session[:access_token])
+#   html = "<h1>Search for a location by lat/lng with a radius of 5000m</h1>"
+#   for location in client.location_search("48.858844","2.294351","5000")
+#     html << "<li> #{location.name} <a href='https://www.google.com/maps/preview/@#{location.latitude},#{location.longitude},19z'>Map</a></li>"
+#   end
+#   html
+# end
+
+# get "/sessions/logout" do
+#   session["access_token"] = nil
+#   session["session_id"] = nil
+#   redirect "/"
+# end
+
+# get '/media_like/:id' do
+#   client = Instagram.client(:access_token => session[:access_token])
+#   client.like_media("#{params[:id]}")
+# end
+
+# get '/media_unlike/:id' do
+#   client = Instagram.client(:access_token => session[:access_token])
+#   client.unlike_media("#{params[:id]}")
+# end
+
+
+	# def show
+
+	# end
 
 
 	# protected
