@@ -36,6 +36,8 @@ Rails.application.routes.draw do
   
    get 'map/mediafeed' => 'map#mediafeed', as: :mediafeed
 
+   get 'map/show' => 'map#show', as: :showmap
+
   resources :map
   resources :sessions
 
