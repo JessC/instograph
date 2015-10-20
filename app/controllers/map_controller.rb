@@ -1,157 +1,140 @@
 class MapController < ApplicationController
 
-	CALLBACK_URL = "http://localhost:3000/map/callback"
+	CALLBACK_URL = "http://instograph.elasticbeanstalk.com/map/callback"
 # 2. CALLBACK - routes here after user give oauth info to instagram
 
-	def connect
-		redirect_to Instagram.authorize_url(:redirect_uri => CALLBACK_URL)
+def connect
+	redirect_to Instagram.authorize_url(:redirect_uri => CALLBACK_URL)
 # 1. ask for user to login to instagram upon navigating to this page by clicking map
-	end
-
-	def callback
-		response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
-# 3. response is set to authorization tokens we get back and then we send them back
-	  session[:access_token] = response.access_token
-# 4. our session is set to the authorization tokes
-	  redirect_to map_index_path
-# 5. gets access token and redirects to map/index
-	end
-
-	def index
-		client = Instagram.client(access_token: session[:access_token])
-		@user = client.user
-		@first_visit
-
-		if !User.where(username: @user.username).first
-			new_user = User.create(
-				username: @user.username,
-				profile_pic: @user.profile_picture,
-				pic_count: @user.counts.media,
-				)
-			@first_visit = true;
-		else
-			@first_visit = false;
-			user = User.where(username: @user.username).first
-				user.profile_pic = @user.profile_picture
-				user.pic_count = @user.counts.media
-				user.save
-			end
-			render :index
-	end     
-
-
-
-
-# # return array with all the images in user media
-def usersfeed
-	p "**users feed**"*15
-  client = Instagram.client(:access_token => session[:access_token])
-  user = client.user
-#    html = "<h1>#{user.username}'s media feed</h1>"
-
-#   page_1 = client.user_media_feed(777)
-#   page_2_max_id = page_1.pagination.next_max_id
-#   page_2 = client.user_recent_media(777, :max_id => page_2_max_id ) unless page_2_max_id.nil?
-#   html << "<h2>Page 1</h2><br/>"
-#   for media_item in page_1
-#     html << "<img src='#{media_item.images.thumbnail.url}'>"
-#   end
-#   html << "<h2>Page 2</h2><br/>"
-#   for media_item in page_2
-#     html << "<img src='#{media_item.images.thumbnail.url}'>"
-#   end
-#   html
-# end
-
-# get "/users/self/feed" do
-
-#   client = Instagram.client(access_token: session[:access_token])
-#   user = client.user
-
-  image_container = []
-  count = 0
-  next_max_id = nil
-  while count < user.counts.media do
-    if next_max_id != nil
-      current_page = client.user_recent_media(user.id, {count: 33, max_id: next_max_id})
-    else
-      current_page = client.user_recent_media(user.id, {count: 33})
-    end
-    next_max_id = current_page.pagination.next_max_id
-    current_page.each do |image|
-      if image["location"]
-        if image["location"]["latitude"]
-        image_container << {
-          url: image.images.standard_resolution.url,
-          thumbnail: image.images.thumbnail.url,
-          location: image.location,
-          tags: image.tags,
-          username: image.user.username,
-          }
-        end
-      end
-    end
-    p "current page count is:"
-    count += current_page.count
-  end
-  p "THIS IS MY JSON RESPONSE"
-  p image_container.to_json
-  	respond_to do |format|
-			if image_container
-			    format.json { render :json => image_container }
-			    format.html {redirect_to '/'}
-			else
-			    format.html { redirect_to map }
-          format.json { render :json => image_container.errors.full_messages, :status => :unprocessable_entity }
-			end
-		end
 end
 
-# return array with first 100 geotagged images of news feed
-def mediafeed 
-		puts "**media feed**"*15
-  client = Instagram.client(:access_token => session[:access_token])
-  user = client.user
-  image_container = []
+def callback
+	response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
+# 3. response is set to authorization tokens we get back and then we send them back
+session[:access_token] = response.access_token
+# 4. our session is set to the authorization tokes
+redirect_to map_index_path
+# 5. gets access token and redirects to map/index
+end
 
-  count = 0
-  next_max_id = nil
-  while image_container.count < 100 do
-    if next_max_id != nil
-      current_page = client.user_media_feed({count: 33, max_id: next_max_id})
-    else
-      current_page = client.user_media_feed({count: 33})
-    end
-    next_max_id = current_page.pagination.next_max_id
-    current_page.each do |image|
-      pp image
-      if image["location"]
-        if image["location"]["latitude"]
-        image_container << {
-          url: image.images.standard_resolution.url,
-          thumbnail: image.images.thumbnail.url,
-          location: image.location,
-          tags: image.tags,
-          username: image.user.username,
-          }
-        end
-      end
-    end
-    count += current_page.count
-    p "current page count is:"
-    p count
-  end
-	p "THIS IS MY JSON CONTAINER"
-  p image_container.to_json
-	respond_to do |format|
-			if image_container
-			      format.json { render :json => image_container }
-			      format.html {redirect_to '/'}
-			else
-			 format.html { redirect_to map }
-       format.json { render :json => image_container.errors.full_messages, :status => :unprocessable_entity }
+def index
+	client = Instagram.client(access_token: session[:access_token])
+	@user = client.user
+	@first_visit
+
+	if !User.where(username: @user.username).first
+		new_user = User.create(
+			username: @user.username,
+			profile_pic: @user.profile_picture,
+			pic_count: @user.counts.media,
+			)
+		@first_visit = true;
+	else
+		@first_visit = false;
+		user = User.where(username: @user.username).first
+		user.profile_pic = @user.profile_picture
+		user.pic_count = @user.counts.media
+		user.save
+	end
+	render :index
+end     
+
+# return array of users images...convert to json
+def usersfeed
+	p "****users feed****"*5
+	client = Instagram.client(:access_token => session[:access_token])
+	user = client.user
+
+	image_container = []
+	count = 0
+	next_max_id = nil
+	while count < user.counts.media do
+		if next_max_id != nil
+			current_page = client.user_recent_media(user.id, {count: 33, max_id: next_max_id})
+		else
+			current_page = client.user_recent_media(user.id, {count: 33})
+		end
+		next_max_id = current_page.pagination.next_max_id
+		current_page.each do |image|
+			if image["location"]
+				if image["location"]["latitude"]
+					image_container << {
+						url: image.images.standard_resolution.url,
+						thumbnail: image.images.thumbnail.url,
+						location: image.location,
+						tags: image.tags,
+						username: image.user.username,
+					}
+				end
 			end
 		end
+		p "current page count is:"
+		count += current_page.count
+	end
+	p "THIS IS MY JSON RESPONSE"
+	p image_container.to_json
+	respond_to do |format|
+		if image_container
+			format.json { render :json => image_container }
+			format.html {redirect_to '/'}
+		else
+			format.html { redirect_to map }
+			format.json { render :json => image_container.errors.full_messages, :status => :unprocessable_entity }
+		end
+	end
+end
+
+# return array with first 100 geotagged images of users friends...convert to json
+def mediafeed 
+	puts "****media feed****"*5
+	client = Instagram.client(:access_token => session[:access_token])
+	user = client.user
+	image_container = []
+
+	count = 0
+	next_max_id = nil
+	while image_container.count < 100 do
+		if next_max_id != nil
+			current_page = client.user_media_feed({count: 33, max_id: next_max_id})
+		else
+			current_page = client.user_media_feed({count: 33})
+		end
+		next_max_id = current_page.pagination.next_max_id
+		current_page.each do |image|
+			pp image
+			if image["location"]
+				if image["location"]["latitude"]
+					image_container << {
+						url: image.images.standard_resolution.url,
+						thumbnail: image.images.thumbnail.url,
+						location: image.location,
+						tags: image.tags,
+						username: image.user.username,
+					}
+				end
+			end
+		end
+		count += current_page.count
+		p "current page count is:"
+		p count
+	end
+	p "THIS IS MY JSON CONTAINER"
+	p image_container.to_json
+	respond_to do |format|
+		if image_container
+			format.json { render :json => image_container }
+			format.html {redirect_to '/'}
+		else
+			format.html { redirect_to map }
+			format.json { render :json => image_container.errors.full_messages, :status => :unprocessable_entity }
+		end
+	end
+end
+
+def destroy
+  session["access_token"] = nil
+  session["session_id"] = nil
+  redirect "/"
 end
 
 # REFERENCE:
@@ -173,27 +156,11 @@ end
 #   html
 # end
 
-# get "/sessions/logout" do
-#   session["access_token"] = nil
-#   session["session_id"] = nil
-#   redirect "/"
-# end
-
-# get '/media_like/:id' do
-#   client = Instagram.client(:access_token => session[:access_token])
-#   client.like_media("#{params[:id]}")
-# end
-
-# get '/media_unlike/:id' do
-#   client = Instagram.client(:access_token => session[:access_token])
-#   client.unlike_media("#{params[:id]}")
-# end
 
 
 	# def show
 
 	# end
-
 
 	# protected
 
@@ -204,19 +171,6 @@ end
 	# end
 
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # get "/user_recent_media" do

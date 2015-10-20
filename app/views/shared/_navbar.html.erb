@@ -20,8 +20,9 @@
           <li><%= link_to "Map", connect_path %></li>
           <li><%= link_to "Contact", contact_path %></li>
           <% if @user != nil %>
-          <li><%= link_to "Log Out", "https://instagram.com/accounts/logout/" %></li>
-          <% else %>
+          <li><%= link_to "Log Out", 'map/destroy' %></li> 
+<!--           FIX LOGOUT...NOT WORKING ACROSS ENTIRE SITE
+ 10/18/2015-->          <% else %>
           <li><%= link_to "Nothing", showmap_path %></li>
           <% end %>
        </ul>

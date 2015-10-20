@@ -38,6 +38,8 @@ Rails.application.routes.draw do
 
    get 'map/show' => 'map#show', as: :showmap
 
+   # delete 'map/:id' => 'map#destroy', as: :logout 
+
   resources :map
   resources :sessions
 
