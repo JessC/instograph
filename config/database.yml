@@ -5,7 +5,6 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
   pool: 5
   timeout: 5000
 
@@ -24,6 +23,7 @@ production:
     <<: *default
     adapter: postgresql
     encoding: unicode
+    statement_limit: 200
     database: <%= ENV['RDS_DB_NAME'] %>
     username: <%= ENV['RDS_USERNAME'] %>
     password: <%= ENV['RDS_PASSWORD'] %>
