@@ -9,3 +9,16 @@ Features:
 3. View last 100 pics from friends in a map interface where pic will be located on map according to GPS data
 
 4. 
+
+
+branch-defaults:
+  master:
+    environment: instograph-test
+global:
+  application_name: InstoGraph
+  default_ec2_keyname: null
+  default_platform: 64bit Amazon Linux 2015.03 v2.0.1 running Ruby 2.2 (Passenger
+    Puma)
+  default_region: us-west-1
+  profile: eb-cli
+  sc: git
