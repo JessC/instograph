@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
 def index
 	@posts = Post.all
-	@user = "USER NAME TO GO HERE EVENTUALLY...maybe"
+	# @user = "USER NAME TO GO HERE EVENTUALLY...maybe"
 end
 
 def new  
