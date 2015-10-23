@@ -23,7 +23,7 @@ test:
 
 production:
     <<: *default
-    adapter: pogit sstgresql
+    adapter: postgresql
     encoding: unicode
     statement_limit: 200
     database: instogdb
