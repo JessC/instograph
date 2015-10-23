@@ -1,6 +1,6 @@
 class MapController < ApplicationController
 
-	CALLBACK_URL = "http://instograph.elasticbeanstalk.com/map/callback"
+	CALLBACK_URL = "http://instograph-test.elasticbeanstalk.com/map/callback"
 # 2. CALLBACK - routes here after user give oauth info to instagram
 
 def connect
