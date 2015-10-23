@@ -10,16 +10,8 @@ default: &default
 
 development:
   <<: *default
-  # adapter: sqlite3
-  # database: db/development.sqlite3
-  adapter: postgresql
-  encoding: unicode
-  statement_limit: 200
-  database: <%= ENV['RDS_DB_NAME'] %>
-  username: <%= ENV['RDS_USERNAME'] %>
-  password: <%= ENV['RDS_PASSWORD'] %>
-  host: <%= ENV['RDS_HOSTNAME'] %>
-  port: <%= ENV['RDS_PORT'] %>
+  adapter: sqlite3
+  database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -39,7 +31,3 @@ production:
   password: <%= ENV['RDS_PASSWORD'] %>
   host: <%= ENV['RDS_HOSTNAME'] %>
   port: <%= ENV['RDS_PORT'] %>
-
-
-
-
