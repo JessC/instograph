@@ -26,8 +26,8 @@ production:
     adapter: postgresql
     encoding: unicode
     statement_limit: 200
-    database: instogdb
+    database: <%= ENV['RDS_DB_NAME'] %>
     username: <%= ENV['RDS_USERNAME'] %>
     password: <%= ENV['RDS_PASSWORD'] %>
-    host: instographdb.cssofobspyxp.us-west-1.rds.amazonaws.com
-    port: 5432
+    host: <%= ENV['RDS_HOSTNAME'] %>
+    port: <%= ENV['RDS_PORT'] %>
