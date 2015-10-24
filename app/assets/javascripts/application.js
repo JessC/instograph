@@ -121,9 +121,9 @@ function initialize() {
     console.log("Successfully got data on initialize!!")
   })
   .fail(function(data){
-    console.log( "Failed to get my own data initialize :(" );
-      console.log(JSON.stringify(data));
-    })
+    console.log( "Failed to get my own data initialize :(");
+    console.log(JSON.stringify(data));
+  })
 }
 
 //event listener to run initialize method on window complete load
@@ -131,6 +131,23 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 $(document).ready(function() {
+
+  function getNewsFeed(event){
+    event.preventDefault();
+    $.ajax({
+      method: 'GET',
+      url: 'map/mediafeed',
+      dataType: 'JSON',
+    })
+    .done(function(data) {
+      populateMap(data);
+      console.log("Successfully got my data on click!!")
+    })
+    .fail(function(data){
+      console.log( "Failed to get my data on click :(");
+      console.log(JSON.stringify(data));
+    })
+  }
 
   function getUserPics(event){
     event.preventDefault();
@@ -141,29 +158,13 @@ $(document).ready(function() {
     })
     .done(function(data) {
       populateMap(data);
-      console.log("Successfully got my data on click!!")
+      console.log("Successfully got data on initialize!!")
     })
     .fail(function(data){
-      console.log( "Failed to get my data on click :(" );
-        console.log(JSON.stringify(data));
-      })
-  }
-
-  function getNewsFeed(event){
-    event.preventDefault();
-    $.ajax({
-      method: 'GET',
-      url: 'map/mediafeed',
-      dataType: 'JSON',
+      console.log( "Failed to get my own data initialize :(");
+      console.log(JSON.stringify(data));
     })
-    .done(function(data){
-      populateMap(data);
-    })
-    .fail(function(data){
-      console.log( "Failed to get my own data on button initialize :(" );
-        console.log(JSON.stringify(data));
-      })
-  }
+  } 
   // function currentLocation(){
   //   if (navigator.geolocation){
   //        navigator.geolocation.getCurrentPosition(getPosition);

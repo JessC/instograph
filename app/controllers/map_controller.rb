@@ -44,10 +44,10 @@ def usersfeed
 	p "****users feed****"*5
 	client = Instagram.client(:access_token => session[:access_token])
 	user = client.user
-
 	image_container = []
 	count = 0
 	next_max_id = nil
+
 	while count < user.counts.media do
 		if next_max_id != nil
 			current_page = client.user_recent_media(user.id, {count: 33, max_id: next_max_id})
@@ -90,9 +90,9 @@ def mediafeed
 	client = Instagram.client(:access_token => session[:access_token])
 	user = client.user
 	image_container = []
-
 	count = 0
 	next_max_id = nil
+
 	while image_container.count < 100 do
 		if next_max_id != nil
 			current_page = client.user_media_feed({count: 33, max_id: next_max_id})
@@ -101,7 +101,6 @@ def mediafeed
 		end
 		next_max_id = current_page.pagination.next_max_id
 		current_page.each do |image|
-			pp image
 			if image["location"]
 				if image["location"]["latitude"]
 					image_container << {
@@ -114,11 +113,10 @@ def mediafeed
 				end
 			end
 		end
-		count += current_page.count
 		p "current page count is:"
-		p count
+		count += current_page.count
 	end
-	p "THIS IS MY JSON CONTAINER"
+	p "THIS IS MY JSON RESPONSE"
 	p image_container.to_json
 	respond_to do |format|
 		if image_container
