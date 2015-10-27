@@ -5,11 +5,23 @@ html, body {
   height: 100%; margin: 0; padding: 0 
 }
 
+//div { border: dotted 1px pink; }
+
 #map-canvas { 
   height: 80%; 
   width: 80%; 
   margin:auto;
   border-radius: 10px;
+}
+
+#home-page {
+  width: 80%;
+  margin: auto;
+}
+
+.map-nav {
+ width: 200px;
+ margin-left: 20px;
 }
 
 body {  
@@ -229,11 +241,8 @@ html{
 }
 
 #logo {
-  display: inline-block;
-  position: relative;
-  right: 15%;
-  height:150px;
-  width:270px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .gmnoprint a, .gmnoprint span {
@@ -244,13 +253,16 @@ html{
   font-family: 'Arial Rounded MT Bold';
 }
 
-input[type="button"] {
-  font-family: 'Arial Rounded MT Bold';
-// background-color: #BFC6DD;
-// color: white;
-  border-radius: 15px;
-  position: relative;
-  height: inherit;
+#size-warning{
+    display: block;
+    margin: auto;
+    background-color: black;
 }
 
-
+@media (min-width: 950px) 
+{
+    #size-warning
+    {
+        display: none;
+    }
+}

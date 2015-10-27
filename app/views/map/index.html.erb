@@ -1,53 +1,53 @@
-<h1> MAP PAGE </h1>
-
-
-
-
   <!-- <div class="bottom_wrapper pos-rl ht-20"> -->
-    <!-- <div class="bottom row span-12-t span-12-d pos-rl full-ht"> -->
-      <div class="col span-2-d span-2-t test">
-        <img id="profile_pic" src="<%=@user.profile_picture%>"/>
-      </div>
-      <% if @first_visit == true %>
-        <div class="col span-2-d span-2-t test">
-          <p>click on your profile picture to return to your gallery</p>
-        </div>
+  <!-- <div class="bottom row span-12-t span-12-d pos-rl full-ht"> -->
+  <div class="map-nav" style="float: left;">
+    <div class="col span-2-d span-2-t test">
+      <img id="profile_pic" src="<%=@user.profile_picture%>"/>
+    </div>
+    <h1> MAP PAGE </h1>
+    <% if @first_visit == true %>
+    <div class="col span-2-d span-2-t test">
+      <p>click on your profile picture to return to your gallery</p>
+    </div>
 
-        <div>
-            <input id="news_feed" class="full-ht " type="button" value="FRIENDS PICS"/>
-        </div>
+    <div>
+      <input id="news_feed" class="full-ht " type="button" value="FRIENDS PICS"/>
+    </div>
 
-      <% else %>
+    <% else %>
 
-        <div>
-            <input id="news_feed" class="full-ht pos-rl" type="button" value="FRIENDS PICS"/>
-        </div>
+    <div>
+      <input id="news_feed" class="btn btn-default" type="button" value="FRIENDS PICS"/>
+    </div>
 
-      <% end %>
+    <% end %>
 
-      <div>
-            <input id="users_feed" class="full-ht pos-rl" type="button" value="MY PICS"/>
-        </div>
-<br>
-      <div>
-          <input id="center" class="pos-rl full-ht" type="button" value="MY LOCATION"/><h6>not active yet</h6>
-      </div>
+    <div>
+      <input id="users_feed" class="btn btn-default" type="button" value="MY PICS"/>
+    </div>
 
-<br>
-      <div>
-          <a id="logout" class="pos-rl full-ht"href="https://instagram.com/accounts/logout/" >
-            <input type="button" class=" pos-rl full-ht" value="LOGOUT"/>
-          </a>
-      </div>
+    <div>
+      <input id="center" class="btn btn-default" type="button" value="MY LOCATION"/><h6>My Location not active yet</h6>
+    </div>
 
- <div id='map-canvas' style="width: 985px; height: 583px;"></div>
+    <div>
+      <a id="logout" href="https://instagram.com/accounts/logout/" >
+        <input type="button" class="btn btn-default" value="LOGOUT"/>
+      </a>
+    </div>
 
-      <div class="test col span-2-d span-2-t mrgn-rt pos-rl ">
-      	<%= link_to image_tag('generic_logo.jpg', :class => '',  id: 'logo'), "https://github.com/JessC?tab=repositories" %>
-      </div>
-    <!-- </div> -->
+    <div>
+      <%= link_to image_tag('generic_logo.jpg', :class => '',  id: 'logo'), "https://github.com/JessC?tab=repositories" %>
+    </div>
+  </div>
+
+
+  <div id='map-canvas'></div>
+
+  
   <!-- </div> -->
-  <iframe name="logoutIframe" width="0" height="0" ></iframe>
+  <!-- </div> -->
+  <iframe name="footer" width="0" height="0" ></iframe>
 
 
 

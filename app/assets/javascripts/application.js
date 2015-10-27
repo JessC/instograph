@@ -26,36 +26,36 @@ var marker_container = [];
 //********************************************************
 // function initMap(){
   //Specify features and elements to define styles.
-  var styleArray = [
-    {
-      featureType: "all",
-      stylers: [
-       { saturation: -80 }
-      ]
-    },{
-      featureType: "road.arterial",
-      elementType: "geometry",
-      stylers: [
-        { hue: "#00ffee" },
-        { saturation: 50 }
-      ]
-    },{
-      featureType: "poi.business",
-      elementType: "labels",
-      stylers: [
-        { visibility: "off" }
-      ]
-    }
-  ];
+  // var styleArray = [
+  //   {
+  //     featureType: "all",
+  //     stylers: [
+  //      { saturation: -80 }
+  //     ]
+  //   },{
+  //     featureType: "road.arterial",
+  //     elementType: "geometry",
+  //     stylers: [
+  //       { hue: "#00ffee" },
+  //       { saturation: 50 }
+  //     ]
+  //   },{
+  //     featureType: "poi.business",
+  //     elementType: "labels",
+  //     stylers: [
+  //       { visibility: "off" }
+  //     ]
+  //   }
+  // ];
   
 // Create a map object and specify the DOM element for display.
   var latlng = new google.maps.LatLng(37.3359971, -121.8847111);
   var myOptions = {
       center: latlng,
       scrollwheel: false,
-      styles: styleArray,
+      //styles: styleArray,
       zoom: 8,
-      // mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
   };
  //********************************************************
 
