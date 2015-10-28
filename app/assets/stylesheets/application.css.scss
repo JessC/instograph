@@ -47,8 +47,15 @@ ul {
 
 .btn-default {
     color: #e6f5f9;
-    background-color: #8ba6b2;
+    background-color: #7bb3c7;
     border-color: none;
+    margin: 2px;
+}
+
+.btn-default:hover {
+    color: #386f78;
+    background-color: #8ba6b2;
+    border-color: #adadad;
 }
 
 .tech-logos-container {
@@ -91,7 +98,7 @@ ul {
   background-color: white;
   border-color: #edeeee;
   border-style: solid;
-  border-radius: 5px;
+  border-radius: 10px;
   border-width: 1px;
   margin-bottom: 60px;
   padding-left: 10px;
