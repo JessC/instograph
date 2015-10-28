@@ -64,6 +64,13 @@ function populateMap(response) {
 
 var mymap = new google.maps.Map(document.getElementById('map-canvas'), myOptions);
 
+ google.maps.event.addListener(mymap, 'click', function(event){
+  this.setOptions({scrollwheel:true});
+ });
+ google.maps.event.addListener(mymap, 'mouseout', function(event){
+  this.setOptions({scrollwheel:false});  
+ });
+
 var oms = new OverlappingMarkerSpiderfier(mymap);//
 
 var infoWindow = new google.maps.InfoWindow({content: ""});

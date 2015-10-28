@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import  "navbar.css.scss";
 
 html, body { 
   height: 100%; margin: 0; padding: 0 
@@ -25,12 +26,11 @@ html, body {
 }
 
 body {  
-  background-color: #fafafa;
+  padding-top: 70px;
+  background-color: #ddecf0;
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
-.navbar {
-}
 
 li { 
   list-style: none;
@@ -45,10 +45,10 @@ ul {
   padding-left: 0px;
 }
 
-.navbar-brand {
-  a {
-    color: #125688;
-  }
+.btn-default {
+    color: #e6f5f9;
+    background-color: #8ba6b2;
+    border-color: none;
 }
 
 .tech-logos-container {
@@ -72,11 +72,7 @@ ul {
 }
 
 .navbar-default {
-  background-color: #fff;
   height: 54px;
-  .navbar-nav li a {
-    color: #125688;
-  }
 }
 
 .navbar-container {
@@ -92,12 +88,13 @@ ul {
 }
 
 .post {
-  background-color: #fff;
+  background-color: white;
   border-color: #edeeee;
   border-style: solid;
-  border-radius: 3px;
+  border-radius: 5px;
   border-width: 1px;
   margin-bottom: 60px;
+  padding-left: 10px;
 }
 
 .post-head {
@@ -235,7 +232,7 @@ nav a {
 }
 
 html{
-//    position: fixed;
+//  position: fixed;
     overflow-y: scroll;
     width: 100%;
 }
