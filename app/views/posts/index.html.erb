@@ -5,20 +5,24 @@
 
 <div class="posts-wrapper row">
   <% @posts.each do |post| %>
-    <div class="post">
-      <div class="post-head">
-        <div class="name">
-          <%= @user %>
-        </div>
+  <div class="post">
+    <div class="post-head">
+      <div class="name">
+        <%= @user %>
+
       </div>
-      <div class="image center-block">
-        <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
-      </div>
-      <p class="caption">
-        <%= "Caption:" %>
-        <%= post.caption %>
-      </p>
     </div>
+    <div class="image center-block">
+<%= post.image %>
+<%= "SPACE" %>
+<%= post.image.url %>
+      <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
+    </div>
+    <p class="caption">
+      <%= "Caption:" %>
+      <%= post.caption %>
+    </p>
+  </div>
   <% end %>
 </div>
 

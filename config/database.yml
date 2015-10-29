@@ -18,8 +18,10 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  adapter: sqlite3
-  database: db/test.sqlite3
+  adapter: postgresql
+  database: db/test.postgresql
+  encoding: unicode
+  statement_limit: 200
 
 production:
   <<: *default
