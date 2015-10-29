@@ -7,6 +7,11 @@
     </div>
     <h1> MAP PAGE </h1>
     <p style="font-size: .7em;">Click on the map to activate scrolling, move cursor off map to cancel.</p>
+
+    <div>
+      <input id="users_feed" class="btn btn-default" type="button" value="MY PICS"/>
+    </div>
+
     <% if @first_visit == true %>
     <div class="col span-2-d span-2-t test">
       <p>click on your profile picture to return to your gallery</p>
@@ -24,25 +29,23 @@
 
     <% end %>
 
-    <div>
-      <input id="users_feed" class="btn btn-default" type="button" value="MY PICS"/>
-    </div>
 
     <div>
       <input id="center" class="btn btn-default" type="button" value="MY LOCATION"/><h6>My Location not active yet</h6>
     </div>
 
-    <div>
+<!--     <div>
       <a id="logout" href="https://instagram.com/accounts/logout/" >
         <input type="button" class="btn btn-default" value="LOGOUT"/>
       </a>
-    </div>
+    </div> -->
 
     <div>
       <%= link_to image_tag('generic_logo.jpg', :class => '',  id: 'logo'), "https://github.com/JessC?tab=repositories" %>
     </div>
   </div>
 
+<div class="main-container">
    <div id="floating-panel">
       <input id="address" type="textbox" style="margin-left: 30px; border-radius: 10px; margin-top: 3px;" placeholder="San Francisco">
       <input class="btn btn-default" id="submit" style="padding: 1px 5px;" type="button" value="Go Here!">
@@ -50,7 +53,7 @@
     
   <div id='map-canvas'></div>
 
-  
+  </div>
   <!-- </div> -->
   <!-- </div> -->
   <iframe name="footer" width="0" height="0" ></iframe>

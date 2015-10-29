@@ -8,11 +8,25 @@ html, body {
 
 //div { border: dotted 1px pink; }
 
+.map-nav {
+ width: 200px;
+ margin-left: 20px;
+ position: fixed;
+}
+
+.main-container {
+  width: calc(100% - 200px);
+  height: calc(100% + 80px);
+  float: right;
+  position: relative;
+}
+
 #map-canvas { 
-  height: 80%; 
-  width: 80%; 
-  margin:auto;
+  width: 95%;
+  height: 85%;
+  margin: auto;
   border-radius: 10px;
+  position: relative;
 }
 
 #home-page {
@@ -20,10 +34,6 @@ html, body {
   margin: auto;
 }
 
-.map-nav {
- width: 200px;
- margin-left: 20px;
-}
 
 body {  
   padding-top: 70px;
@@ -257,6 +267,19 @@ html{
 
 .pic_info {
   font-family: 'Arial Rounded MT Bold';
+}
+
+.footer {
+
+  bottom: 0;
+  width: 100%;
+  margin: auto;
+  margin-top: 100px;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  //background-color: #f5f5f5;
+  color: #7bb3c7
+
 }
 
 #size-warning{
