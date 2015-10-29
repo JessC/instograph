@@ -2,9 +2,11 @@
   <!-- <div class="bottom row span-12-t span-12-d pos-rl full-ht"> -->
   <div class="map-nav" style="float: left;">
     <div class="col span-2-d span-2-t test">
-      <img id="profile_pic" src="<%=@user.profile_picture%>"/>
+     <a href="https://instagram.com/">
+      <img id="profile_pic" src="<%=@user.profile_picture%>"/></a>
     </div>
     <h1> MAP PAGE </h1>
+    <p style="font-size: .7em;">Click on the map to activate scrolling, move cursor off map to cancel.</p>
     <% if @first_visit == true %>
     <div class="col span-2-d span-2-t test">
       <p>click on your profile picture to return to your gallery</p>
@@ -41,7 +43,11 @@
     </div>
   </div>
 
-
+   <div id="floating-panel">
+      <input id="address" type="textbox" style="margin-left: 30px; border-radius: 10px; margin-top: 3px;" placeholder="San Francisco">
+      <input class="btn btn-default" id="submit" style="padding: 1px 5px;" type="button" value="Go Here!">
+    </div>
+    
   <div id='map-canvas'></div>
 
   

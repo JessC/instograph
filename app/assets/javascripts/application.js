@@ -49,7 +49,7 @@ var marker_container = [];
   // ];
   
 // Create a map object and specify the DOM element for display.
-  var latlng = new google.maps.LatLng(37.3359971, -121.8847111);
+  var latlng = new google.maps.LatLng(37.757815, -122.5076403);
   var myOptions = {
       center: latlng,
       scrollwheel: false,
@@ -70,6 +70,12 @@ var mymap = new google.maps.Map(document.getElementById('map-canvas'), myOptions
  google.maps.event.addListener(mymap, 'mouseout', function(event){
   this.setOptions({scrollwheel:false});  
  });
+
+var geocoder = new google.maps.Geocoder();
+
+  document.getElementById('submit').addEventListener('click', function() {
+    geocodeAddress(geocoder, mymap);
+  });
 
 var oms = new OverlappingMarkerSpiderfier(mymap);//
 
@@ -114,6 +120,21 @@ for (var i=0; i<response.length;i++){
       });
     }
   }
+
+  function geocodeAddress(geocoder, resultsMap) {
+  var address = document.getElementById('address').value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      resultsMap.setCenter(results[0].geometry.location);
+/*      var marker = new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location
+      });*/
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
 //***********BELOW IS ALL THE AJAX UNCOMMENT AFTER MAP SHOWS UP********
 
 function initialize() {

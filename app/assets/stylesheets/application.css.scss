@@ -46,16 +46,18 @@ ul {
 }
 
 .btn-default {
-    color: #e6f5f9;
-    background-color: #7bb3c7;
-    border-color: none;
-    margin: 2px;
+  color: #e6f5f9;
+  background-color: #7bb3c7;
+  border-color: none;
+  margin: 2px;
+  outline: 0;
 }
 
 .btn-default:hover {
-    color: #386f78;
-    background-color: #8ba6b2;
-    border-color: #adadad;
+  color: #386f78;
+  background-color: #8ba6b2;
+  border-color: #adadad;
+  outline: 0;
 }
 
 .tech-logos-container {
@@ -112,7 +114,7 @@ ul {
   line-height: 18px;
   .thumbnail {}
   .name {
-    display: block;
+  display: block;
   }
 }
 
@@ -258,15 +260,16 @@ html{
 }
 
 #size-warning{
-    display: block;
-    margin: auto;
-    background-color: black;
+  display: block;
+  margin: auto;    
+  background-color: black;
 }
+
 
 @media (min-width: 950px) 
 {
-    #size-warning
-    {
-        display: none;
+  #size-warning
+   {
+     display: none;
     }
 }
