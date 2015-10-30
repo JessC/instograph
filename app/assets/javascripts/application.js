@@ -49,12 +49,12 @@ var marker_container = [];
   // ];
   
 // Create a map object and specify the DOM element for display.
-  var latlng = new google.maps.LatLng(37.757815, -122.5076403);
+  var latlng = new google.maps.LatLng(35.2725611, -120.7054056);
   var myOptions = {
       center: latlng,
       scrollwheel: false,
       //styles: styleArray,
-      zoom: 8,
+      zoom: 10,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
   };
  //********************************************************
