@@ -146,9 +146,9 @@ function initialize() {
   })
   .done(function(data) {
     populateMap(data);
-    console.log("Successfully got data on initialize!!")
+    console.log("Successfully got data on initialize!!");
   })
-  .fail(function(data){
+  .fail(function(data) {
     console.log( "Failed to get my own data initialize :(");
     console.log(JSON.stringify(data));
   })
@@ -169,9 +169,9 @@ $(document).ready(function() {
     })
     .done(function(data) {
       populateMap(data);
-      console.log("Successfully got my data on click!!")
+      console.log("Successfully got my data on click!!");
     })
-    .fail(function(data){
+    .fail(function(data) {
       console.log( "Failed to get my data on click :(");
       console.log(JSON.stringify(data));
     })
@@ -186,13 +186,34 @@ $(document).ready(function() {
     })
     .done(function(data) {
       populateMap(data);
-      console.log("Successfully got data on initialize!!")
+      console.log("Successfully got data on initialize!!");
     })
-    .fail(function(data){
+    .fail(function(data) {
       console.log( "Failed to get my own data initialize :(");
       console.log(JSON.stringify(data));
     })
   } 
+
+// var signout = function() {
+//   document.location.href = "https://instagram.com/accounts/logout?continue=http://www.mysite.com";
+// };
+  // function logout(event){
+  //   event.preventDefault();
+
+  //   $.ajax({
+  //     url: "map/destroy",
+  //     method: 'get',
+  //     dataType: 'JSON',
+  //   })
+  //   .done(function(data) {
+  //     if(result === "no_errors") location.href = "http://www.google.com"
+  //         console.log("Logout Successful");
+  //   })
+  //   .fail(function(e) {
+  //     alert('Error::' + e.responseText);
+  //     console.log("logout fail");
+  //   })
+  // }
   // function currentLocation(){
   //   if (navigator.geolocation){
   //        navigator.geolocation.getCurrentPosition(getPosition);
@@ -225,6 +246,9 @@ $(document).ready(function() {
 
   $("#users_feed").on("click", getUserPics);
   $("#news_feed").on("click", getNewsFeed);
+  //$("#instagram_logout").on("click", logout);
   // $("#center").on("click", currentLocation);
 });
+
+
 

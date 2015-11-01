@@ -1,4 +1,7 @@
 <h1>PICTURE INDEX PAGE</h1>
+<h3 style="color: red; margin-left: 150px; margin-right: 150px;"> Still working on getting a production environment database set up. Everything thing works but pictures will vanish into thin air after being uploaded</h3>
+
+
 <a class="btn btn-default" href="posts/new" role="button">Upload a Picture</a>
 
 <br>
@@ -13,9 +16,8 @@
       </div>
     </div>
     <div class="image center-block">
+<%= "DATABASE FILE PATH FOR POST.IMAGE:" %><br>
 <%= post.image %>
-<%= "SPACE" %>
-<%= post.image.url %>
       <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
     </div>
     <p class="caption">

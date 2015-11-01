@@ -2,32 +2,37 @@
 <html>
 <head>
 
-  <title>InstoGraph</title>
+	<title>InstoGraph</title>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
- <script type='text/javascript' src="https://maps.googleapis.com/maps/api/js?libraries=places">
-  </script>
+	<script type='text/javascript' src="https://maps.googleapis.com/maps/api/js?libraries=places">
+	</script>
 
-  <!-- <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script> -->
-
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 
 </head>
 
-<%=  render 'shared/navbar' %>
-
 <body>
 
+	<%=  render 'shared/navbar' %>
+
+	<div class="wrapper">
+
 <!--  <body onload="initMap()">
- -->
+-->
 <%= yield %>
+
+
+	<div class="push"></div>
+</div>
+
+
+	<%= render 'shared/footer' %>
+
 
 </body>
 
-<%= render 'shared/footer' %>
-  <!-- <script src="http://localhost:3000/assets/oms.min.js"></script> -->
- 
 </html>

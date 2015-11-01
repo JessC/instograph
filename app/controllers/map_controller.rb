@@ -136,7 +136,10 @@ end
 def destroy
   session["access_token"] = nil
   session["session_id"] = nil
-  redirect "/"
+	respond_to do |format|
+  format.html # show.html.erb
+  format.json 
+ end
 end
 
 # REFERENCE:
