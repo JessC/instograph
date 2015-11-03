@@ -2,7 +2,6 @@
   <%= simple_form_for @post, html: { class: 'form-horizontal', multipart: true } do |pic| %>
     <div class="form-group">
       <%= pic.input :image %>
-      <%= f.file_field :image, placeholder: "Upload Photo"%> <!--delete this line-->
     </div>
     <div class="form-group text-center">
       <%= pic.input :caption %>
@@ -11,4 +10,3 @@
       <%= pic.button :submit, class: 'btn-success' %>
     </div>
   <% end %>
-</div>
