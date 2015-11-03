@@ -64,12 +64,11 @@ Rails.application.configure do
   # Amazon Web Services S3
   config.paperclip_defaults = {
     :storage => :s3,
-    :s3_host_name => 'elasticbeanstalk-us-west-1-467246738516'
-    # :s3_credentials => {
-    #   :bucket => 'elasticbeanstalk-us-west-1-467246738516', 
-    #   :access_key_id => ENV['AWS_ACCESS_KEY'],
-    #   :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    # }
+    :s3_credentials => {
+      :bucket => ENV['S3_BUCKET_NAME'],, 
+      :access_key_id => ENV['AWS_ACCESS_KEY'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
   }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
