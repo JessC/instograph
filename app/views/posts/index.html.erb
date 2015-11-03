@@ -19,9 +19,7 @@
 <%= "DATABASE FILE PATH FOR POST.IMAGE:" %><br>
 <%= post.image%>
 
-
 <%= image_tag post.image %>
-
 
       <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
     </div>
@@ -32,5 +30,19 @@
   </div>
   <% end %>
 </div>
+
+
+
+
+<h1>S3 Image app</h1>
+ 
+<%= link_to "Add new post", new_post_path %>
+ 
+<br>
+ 
+<% @posts.each do |post| %>
+  <%= post.caption %>
+  <%= image_tag post.image.url(:med) %>
+<% end %>
 
 

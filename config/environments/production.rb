@@ -59,7 +59,12 @@ Rails.application.configure do
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
-  Paperclip.options[:command_path] = "/usr/local/bin/"
+  #Paperclip.options[:command_path] = "/usr/local/bin/" MAY BE PROBLEM
+
+  #   config.paperclip_defaults = {
+  #   :storage => :s3,
+  #   :s3_host_name => 's3-eu-west-1.amazonaws.com'
+  # } FOUND ON http://stackoverflow.com/questions/19348886/rails-4-paperclip-amazon-s3-config-amazon-path
 
   # Amazon Web Services S3
   config.paperclip_defaults = {
