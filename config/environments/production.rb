@@ -61,19 +61,15 @@ Rails.application.configure do
 
   #Paperclip.options[:command_path] = "/usr/local/bin/" MAY BE PROBLEM
 
-  #   config.paperclip_defaults = {
-  #   :storage => :s3,
-  #   :s3_host_name => 's3-eu-west-1.amazonaws.com'
-  # } FOUND ON http://stackoverflow.com/questions/19348886/rails-4-paperclip-amazon-s3-config-amazon-path
-
   # Amazon Web Services S3
   config.paperclip_defaults = {
     :storage => :s3,
-    :s3_credentials => {
-      :bucket => 'elasticbeanstalk-us-west-1-467246738516', 
-      :access_key_id => ENV['AWS_ACCESS_KEY'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    }
+    :s3_host_name => 'elasticbeanstalk-us-west-1-467246738516'
+    # :s3_credentials => {
+    #   :bucket => 'elasticbeanstalk-us-west-1-467246738516', 
+    #   :access_key_id => ENV['AWS_ACCESS_KEY'],
+    #   :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    # }
   }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
