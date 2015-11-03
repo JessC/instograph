@@ -14,24 +14,20 @@
 	<%= csrf_meta_tags %>
 
 </head>
-
+<!--  <body onload="initMap()"> -->
 <body>
 
 	<%=  render 'shared/navbar' %>
 
 	<div class="wrapper">
 
-<!--  <body onload="initMap()">
--->
 <%= yield %>
 
+<div class="push"></div>
 
-	<div class="push"></div>
 </div>
 
-
-	<%= render 'shared/footer' %>
-
+<%= render 'shared/footer' %>
 
 </body>
 

@@ -4,8 +4,8 @@ if Rails.env.production?
 	CALLBACK_URL = "http://instograph-test.elasticbeanstalk.com/map/callback"
 else
 	CALLBACK_URL = "http://localhost:3000/map/callback"
-end
 # 2. CALLBACK - routes here after user give oauth info to instagram
+end
 
 def connect
 	redirect_to Instagram.authorize_url(:redirect_uri => CALLBACK_URL)
@@ -177,6 +177,9 @@ end
 
 end
 
+#****************************************************************
+#CODE BELOW IS JUST FOR REFERENCE COPIED FROM DOCUMENTATION
+#****************************************************************
 
 # get "/user_recent_media" do
 #   client = Instagram.client(:access_token => session[:access_token])
