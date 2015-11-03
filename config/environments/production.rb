@@ -59,7 +59,7 @@ Rails.application.configure do
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
-  #Paperclip.options[:command_path] = "/usr/local/bin/" MAY BE PROBLEM
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 
   # Amazon Web Services S3
   config.paperclip_defaults = {
