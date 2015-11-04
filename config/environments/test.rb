@@ -26,16 +26,16 @@ Rails.application.configure do
   Paperclip.options[:command_path] = "/usr/local/bin/"
 
   # Amazon Web Services S3
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_host_name => 's3-us-west-1.amazonaws.com',
-    :s3_credentials => {
-      :bucket => 'elasticbeanstalk-us-west-1-467246738516',
-      :s3_credentials => '#{Rails.root}/config/aws.yml'
-      # :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      # :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    }
-  }
+  # config.paperclip_defaults = {
+  #   :storage => :s3,
+  #   :s3_host_name => 's3-us-west-1.amazonaws.com',
+  #   :s3_credentials => {
+  #     :bucket => 'elasticbeanstalk-us-west-1-467246738516',
+  #     :s3_credentials => '#{Rails.root}/config/aws.yml'
+  #     # :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+  #     # :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  #   }
+  # }
 
   # Disable request forgery protection in test environment.
   config.action_controller.allow_forgery_protection = false

@@ -59,7 +59,7 @@ Rails.application.configure do
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
-  Paperclip.options[:command_path] = "/usr/local/bin/"
+  #Paperclip.options[:command_path] = "/usr/local/bin/"
 
   # Amazon Web Services S3
   config.paperclip_defaults = {
@@ -70,6 +70,7 @@ Rails.application.configure do
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
+    :path => "/:class/:attachment/:id_partition/:style/:filename"
   }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
