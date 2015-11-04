@@ -1,8 +1,8 @@
 class Post < ActiveRecord::Base
 	validates :image, presence: true
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/,
 
-  has_attached_file :image, styles: { :medium => "640x" }
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  has_attached_file :image, styles: { :medium => "640x" },
   #**********************************************************************************************
      #SAYS S3 CREDENTIALS NEED TO BE IN MODEL, BUT VERIFY LATER, IF NOT DELETE!!!
      #http://stackoverflow.com/questions/19348886/rails-4-paperclip-amazon-s3-config-amazon-path 
