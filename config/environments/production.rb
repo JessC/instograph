@@ -66,8 +66,8 @@ Rails.application.configure do
     :storage => :s3,
     :s3_credentials => {
       :bucket => 'elasticbeanstalk-us-west-1-467246738516', 
-      :access_key_id => ENV['AWS_ACCESS_KEY'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      :access_key_id => 'AKIAI4YT4VOBBYXA2IBA',
+      :secret_access_key => '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'
     }
   }
 
