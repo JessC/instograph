@@ -64,13 +64,13 @@ Rails.application.configure do
   # Amazon Web Services S3
   config.paperclip_defaults = {
     :storage => :s3,
+    :path => "/:class/:attachment/:id_partition/:style/:filename",
     :s3_host_name => 's3-us-west-1.amazonaws.com',
     :s3_credentials => {
       :bucket => 'instograph-content', 
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
-    :path => "/:class/:attachment/:id_partition/:style/:filename"
   }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
