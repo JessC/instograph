@@ -43,7 +43,7 @@ gem 'puma'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :test, :development do
+group :development do
 	# Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.3.10'  
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -56,7 +56,7 @@ group :test, :development do
   gem 'spring'
 end
 
-  group :production do
+  group :production, :test do
     # Use PostgreSQL as the database for Active Record
     gem 'pg', '~> 0.18.3'
 
