@@ -56,7 +56,7 @@ group :test, :development do
   gem 'spring'
 end
 
-  group :production, do
+  group :production do
     # Use PostgreSQL as the database for Active Record
     gem 'pg', '~> 0.18.3'
 
