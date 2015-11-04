@@ -64,10 +64,11 @@ Rails.application.configure do
   # Amazon Web Services S3
   config.paperclip_defaults = {
     :storage => :s3,
+    :s3_host_name => 's3-us-west-1.amazonaws.com',
     :s3_credentials => {
       :bucket => 'elasticbeanstalk-us-west-1-467246738516', 
-      :access_key_id => 'AKIAI4YT4VOBBYXA2IBA',
-      :secret_access_key => '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'
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
 
