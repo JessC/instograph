@@ -1,14 +1,16 @@
 class Post < ActiveRecord::Base
 	validates :image, presence: true
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/,
 
-  has_attached_file :image, styles: { :medium => "640x" },
+  has_attached_file :storage => :s3,
+  									:s3_host_name => 's3-us-west-1.amazonaws.com',
+          					:s3_credentials => Proc.new{|a| a.instance.s3_credentials }
+  									# :image, styles: { :medium => "640x" }
+
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   #**********************************************************************************************
      #SAYS S3 CREDENTIALS NEED TO BE IN MODEL, BUT VERIFY LATER, IF NOT DELETE!!!
      #http://stackoverflow.com/questions/19348886/rails-4-paperclip-amazon-s3-config-amazon-path 
-          :storage => :s3,
-          :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
-					:s3_host_name => 's3-us-west-1.amazonaws.com'
+
   def s3_credentials
     {:bucket => 'instograph-content', 
      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
