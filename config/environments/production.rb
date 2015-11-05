@@ -62,16 +62,16 @@ Rails.application.configure do
   Paperclip.options[:command_path] = "/usr/local/bin/"
 
   # Amazon Web Services S3
-  # config.paperclip_defaults = {
-  #   :storage => :s3,
-  #   #:path => "/:class/:attachment/:id_partition/:style/:filename",
-  #   :s3_host_name => 's3-us-west-1.amazonaws.com',
-  #   :s3_credentials => {
-  #     :bucket => 'elasticbeanstalk-us-west-1-467246738516', 
-  #     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-  #     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-  #   }
-  # }
+  config.paperclip_defaults = {
+    :storage => :s3,
+    #:path => "/:class/:attachment/:id_partition/:style/:filename",
+    :s3_host_name => 's3-us-west-1.amazonaws.com',
+    :s3_credentials => {
+      :bucket => 'elasticbeanstalk-us-west-1-467246738516', 
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
