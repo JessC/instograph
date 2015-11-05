@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   #  has_attached_file :download,
   #         :storage => :s3,
   #         :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
-		# 			:s3_host_name => 's3-us-west-1.amazonaws.com'
+	#	  			:s3_host_name => 's3-us-west-1.amazonaws.com'
   # def s3_credentials
   #   {:bucket => 'elasticbeanstalk-us-west-1-467246738516', 
   #    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
