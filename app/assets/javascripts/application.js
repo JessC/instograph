@@ -54,7 +54,7 @@ var marker_container = [];
       center: latlng,
       scrollwheel: false,
       //styles: styleArray,
-      zoom: 10,
+      zoom: 6,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
   };
  //********************************************************
