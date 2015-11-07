@@ -62,10 +62,11 @@ Rails.application.configure do
   Paperclip.options[:command_path] = "/usr/local/bin/"
 
   # Amazon Web Services S3
-  config.paperclip_defaults = {
+PAPERCLIP_STORAGE_OPTIONS = {
     :storage => :s3,
     #:path => "/:class/:attachment/:id_partition/:style/:filename",
     :s3_host_name => 'http://s3.amazonaws.com/elasticbeanstalk-us-west-1-467246738516',
+    # :path => "/:style/:filename"
     :s3_credentials => {
       :bucket => 'elasticbeanstalk-us-west-1-467246738516', 
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
