@@ -10,8 +10,8 @@ class Post < ActiveRecord::Base
                       # :path => "images/:uuid_partition/:uuid/:style.:extension",
                       # :url => ':s3_authenticated_url', # generates an expiring url
                       # :s3_credentials => File.join(Rails.root, 'config', 's3.yml'),
-                      :s3_permissions => 'private',
-                      :s3_protocol => 'https'
+                      :s3_permissions => 'private'
+                      # :s3_protocol => 'https'
   else
     has_attached_file :image, styles: { :medium => "640x" },
                     :storage => :filesystem
