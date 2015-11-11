@@ -58,11 +58,6 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-Aws.config.update({
-  region: 'us-west-1',
-  credentials: Aws::Credentials.new('AKIAI4YT4VOBBYXA2IBA', 'd+CFbZ2JtRuEre4F3pljTQ5TACP81RnPIfl7kmN0'),
-})
-
 
   Paperclip.options[:command_path] = "/usr/local/bin/"
 

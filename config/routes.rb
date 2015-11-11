@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   #   resources :products
 
   resources :posts  #<- THE 's' NEEDS TO BE THERE
-   #delete 'posts/:id' => 'posts#destroy', as: :delete
+   delete 'posts/:id' => 'posts#destroy', as: :delete_pic
    
    get 'map/connect' => 'map#connect', as: :connect
 
