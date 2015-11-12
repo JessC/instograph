@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   if Rails.env.production?
     has_attached_file :image, styles: { :medium => "640x" },
                       :storage => :s3,
-                      :bucket => "elasticbeanstalk-us-west-1-467246738516", 
+                      :bucket => "instograph-content", 
   									  :access_key_id => ENV['AWS_ACCESS_KEY_ID'], 
   									  :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
                       # :path => "images/:uuid_partition/:uuid/:style.:extension",

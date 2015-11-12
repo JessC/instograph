@@ -69,7 +69,7 @@ Rails.application.configure do
     # :s3_host_name => 'http://s3.amazonaws.com/elasticbeanstalk-us-west-1-467246738516',
     # :s3_endpoint => 'elasticbeanstalk-us-west-1-467246738516.s3.amazonaws.com'
     :s3_credentials => {
-      :bucket => 'elasticbeanstalk-us-west-1-467246738516', 
+      :bucket => 'instograph-content', 
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
