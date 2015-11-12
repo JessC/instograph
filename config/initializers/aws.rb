@@ -1,6 +1,6 @@
-require 'aws-sdk'
+# require 'aws-sdk'
 
-AWS.config(:s3_endpoint => 'elasticbeanstalk-us-west-1-467246738516.s3.amazonaws.com')
+# AWS.config(:s3_endpoint => 'elasticbeanstalk-us-west-1-467246738516.s3.amazonaws.com')
 # s3 = AWS::S3.new
   
 #ADDED 11/20/2015
