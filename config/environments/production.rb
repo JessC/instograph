@@ -63,16 +63,14 @@ Rails.application.configure do
 
   # Amazon Web Services S3
   config.paperclip_defaults = {
-    :storage => :s3,
-    # :path => "/:class/:attachment/:id_partition/:style/:filename",
-    # :path => "/:style/:filename"
-    # :s3_host_name => 'http://s3.amazonaws.com/elasticbeanstalk-us-west-1-467246738516',
-    # :s3_endpoint => 'elasticbeanstalk-us-west-1-467246738516.s3.amazonaws.com'
-    :s3_credentials => {
-      :bucket => 'instograph-content', 
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    }
+    :storage => :fog,
+    :fog_credentials => {
+      :provider => "AWS",
+      :region => 'us-west-1',
+      :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    },
+    :fog_directory => ENV['S3_BUCKET']
   }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
@@ -95,3 +93,21 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
+
+
+#PREVIOUS PAPERCLIP CONFIGURATION
+ # Paperclip.options[:command_path] = "/usr/local/bin/"
+
+ #  # Amazon Web Services S3
+ #  config.paperclip_defaults = {
+ #    :storage => :s3,
+ #    # :path => "/:class/:attachment/:id_partition/:style/:filename",
+ #    # :path => "/:style/:filename"
+ #    # :s3_host_name => 'http://s3.amazonaws.com/elasticbeanstalk-us-west-1-467246738516',
+ #    # :s3_endpoint => 'elasticbeanstalk-us-west-1-467246738516.s3.amazonaws.com'
+ #    :s3_credentials => {
+ #      :bucket => 'instograph-content', 
+ #      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+ #      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+ #    }
+ # }

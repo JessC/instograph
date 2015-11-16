@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -14,7 +11,6 @@ Rails.application.routes.draw do
   get 'main/about' => "main#about", as: :about
  
   get 'main/contact' => "main#contact", as: :contact
-
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -39,6 +35,7 @@ Rails.application.routes.draw do
    delete 'map/destroy' => 'map#destroy', as: :logout 
 
   resources :map
+
   resources :sessions
 
 

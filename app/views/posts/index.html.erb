@@ -1,8 +1,12 @@
-<h1>PICTURE INDEX PAGE</h1>
-<h3 style="color: red; margin-left: 150px; margin-right: 150px;"> Still working on getting a production environment database set up. Soooo this page may have errors if you try to do anything</h3>
+<h1 style="text-align: center;">PICTURE INDEX PAGE</h1>
+
+<h3 style="margin-left: 150px; margin-right: 150px;"> 
+You can upload pictures now!!! Theres no real point <i>yet</i>, it was more for me to get experience working with the technology to make it happen.</h3>
+<h4 style="color: red; margin-left: 150px; margin-right: 150px;"> 
+This is in no way tied to you or any account and is completely anonymous...against my better judgement...so try to be nice :)</h4>
 
 
-<a class="btn btn-default" href="posts/new" role="button">Upload a Picture</a>
+<a style="margin-left: 150px;" class="btn btn-default" href="posts/new" role="button">Upload a Picture</a>
 
 <br>
 
@@ -16,8 +20,8 @@
       </div>
     </div>
     <div class="image center-block">
-<%= "DATABASE FILE PATH FOR POST.IMAGE:" %><br>
-<%= post.image%>
+<%# "DATABASE FILE PATH FOR POST.IMAGE:" %><br>
+<%# post.image.url %>
 
       <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
     </div>
