@@ -40,11 +40,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #Used for pg server
 gem 'puma'
 
-gem 'aws-sdk-v1'
-gem 'aws-sdk', '>= 2.0.0'
-
-gem 'fog'
-
 # gem 'carrierwave' 
 
 # Use Capistrano for deployment
@@ -68,5 +63,10 @@ end
     # Use PostgreSQL as the database for Active Record
     gem 'pg', '~> 0.18.3'
     
-  end
+    gem 'aws-sdk-v1'
+    gem 'aws-sdk', '>= 2.0.0'
+
+    gem 'fog'
+  
+end
 
