@@ -23,7 +23,8 @@ Rails.application.routes.draw do
 
   resources :posts  #<- THE 's' NEEDS TO BE THERE
    delete 'posts/:id' => 'posts#destroy', as: :delete_pic
-   
+  
+
    get 'map/connect' => 'map#connect', as: :connect
 
    get 'map/callback' => 'map#callback', as: :callback
@@ -33,7 +34,7 @@ Rails.application.routes.draw do
    get 'map/mediafeed' => 'map#mediafeed', as: :mediafeed
 
    delete 'map/destroy' => 'map#destroy', as: :logout 
-
+  
   resources :map
 
   resources :sessions
