@@ -60,13 +60,13 @@ group :test, :development do
 end
 
   group :production do
-    # Use PostgreSQL as the database for Active Record
-    gem 'pg', '~> 0.18.3'
-    
-    gem 'aws-sdk-v1'
-    gem 'aws-sdk', '>= 2.0.0'
-
-    gem 'fog'
+  # Use PostgreSQL as the database for Active Record
+  gem 'pg', '~> 0.18.3'
+  
+  gem 'aws-sdk-v1'
+  gem 'aws-sdk', '>= 2.0.0'
+  
+  gem 'fog'
   
 end
 
