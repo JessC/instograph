@@ -40,8 +40,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #Used for pg server
 gem 'puma'
 
-gem 'aws-sdk-v1'#, require: false
-gem 'aws-sdk', '>= 2.0.0'#, require: false
+gem 'aws-sdk-v1', require: false
+gem 'aws-sdk', '>= 2.0.0', require: false
   
 gem 'fog'
 # gem 'carrierwave' 

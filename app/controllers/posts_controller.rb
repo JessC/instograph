@@ -12,14 +12,14 @@ end
 
 def create  
 	@post = Post.create(post_params)
-	if @post.save
-		redirect_to posts_path, success: 'File successfully uploaded'
-	else
-		flash.now[:notice] = 'There was an error'
-		render :new
-    	# redirect_to posts_path
-    end
-  end 
+	# if @post.save
+	# 	redirect_to posts_path, success: 'File successfully uploaded'
+	# else
+	# 	flash.now[:notice] = 'There was an error'
+	# 	render :new
+  # end
+  redirect_to posts_path
+end 
 
 def show
   @post = Post.find(params[:id])
