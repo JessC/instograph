@@ -1,7 +1,7 @@
 class MapController < ApplicationController
 	
 if Rails.env.production?
-	CALLBACK_URL = "http://instograph-test.elasticbeanstalk.com/map/callback" || "http://instograph.elasticbeanstalk.com/map/callback"
+	CALLBACK_URL = "http://instograph.elasticbeanstalk.com/map/callback"
 else
 	CALLBACK_URL = "http://localhost:3000/map/callback"
 # 2. CALLBACK - routes here after user give oauth info to instagram
