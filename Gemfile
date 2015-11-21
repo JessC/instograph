@@ -37,8 +37,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-gem 'aws-sdk-v1', require: false
-gem 'aws-sdk', '>= 2.0.0', require: false
+gem 'aws-sdk-v1'#, require: false
+gem 'aws-sdk'#, '>= 2.0.0', require: false
   
 gem 'fog'
 # gem 'carrierwave' 

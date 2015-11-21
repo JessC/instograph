@@ -7,13 +7,13 @@ Rails.application.configure do
   config.paperclip_defaults = {
     :storage => :fog,
     :fog_credentials => "#{Rails.root}/config/aws.yml",
+    :fog_directory => 'instograph-content'
  #  :fog_credentials => {
  #    :provider => "AWS",
  #    :region => 'us-west-1',
  #    :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
  #    :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
  #   },
-    :fog_directory => 'instograph-content'
   }
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
