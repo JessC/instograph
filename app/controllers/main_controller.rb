@@ -4,12 +4,7 @@ class MainController < ApplicationController
 
 def index
 	# redirect_to Instagram.authorize_url(:redirect_uri => CALLBACK_URL)	
-
-
 end     
-
-
-
 
 def about
 end
@@ -19,7 +14,6 @@ end
 
 def post
 end
-
 
 # https://api.instagram.com/oauth/authorize/?client_id=client_id&redirect_uri=https://localhost:3000&response_type=code
 end
