@@ -24,7 +24,18 @@ Rails.application.configure do
   config.action_dispatch.show_exceptions = false
 
   Paperclip.options[:command_path] = "/usr/local/bin/"
-
+  # Amazon Web Services S3
+  config.paperclip_defaults = {
+    :storage => :fog,
+    :fog_credentials => "#{Rails.root}/config/aws.yml",
+    :fog_directory => 'instograph-content'
+     # :fog_credentials => {
+     #  :provider => "AWS",
+     #  :region => 'us-west-1',
+     #  :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+     #  :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+     # },
+  }
   # Amazon Web Services S3
   # config.paperclip_defaults = {
   #   :storage => :s3,
