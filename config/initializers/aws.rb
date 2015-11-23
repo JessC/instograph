@@ -1,5 +1,5 @@
 require 'aws-sdk-v1'
-require 'aws-sdk'
+# require 'aws-sdk'
 
 AWS.config(
 	aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'], 
