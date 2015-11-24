@@ -43,6 +43,8 @@ gem 'aws-sdk'#, '>= 2.0.0', require: false
 gem 'fog'
 # gem 'carrierwave' 
 
+gem 'rmagick'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
