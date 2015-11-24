@@ -21,6 +21,6 @@
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 
-instagram.rb
+initializers/instagram.rb
 
 aws.yml

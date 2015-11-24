@@ -64,15 +64,15 @@ Rails.application.configure do
   # Amazon Web Services S3
   config.paperclip_defaults = {
     :storage => :fog,
-    # :fog_credentials => "#{Rails.root}/config/aws.yml",
+    :fog_credentials => "#{Rails.root}/config/aws.yml",
     :fog_directory => ENV['S3_BUCKET'],
-    :fog_credentials => {
-      :provider => 'AWS',
-     # :scheme => 'https'
-      :region => 'us-west-1',
-      :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-      },
+    # :fog_credentials => {
+    #   :provider => "AWS",
+    #   :region => 'us-west-1',
+    #   :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    #   :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    # # :scheme => 'https'
+    #   },
   }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.

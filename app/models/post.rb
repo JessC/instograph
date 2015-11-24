@@ -2,7 +2,10 @@ class Post < ActiveRecord::Base
 	validates :image, presence: true
 
 #***CURRENTLY Prod & Dev ARE STORED ON S3***
-# if Rails.env.production? 
+ if Rails.env.test?
+    has_attached_file :image, styles: { :medium => "640x" },
+    :storage => :filesystem 
+ else
     has_attached_file :image, styles: { :medium => "640x" },
     :bucket => "instograph-content", 
     :storage => :fog,
@@ -16,10 +19,7 @@ class Post < ActiveRecord::Base
   # :s3_permissions => 'private'
   # :s3_protocol => 'https'
   
-# else
-#   has_attached_file :image, styles: { :medium => "640x" },
-#   :storage => :filesystem
-# end  
+ end  
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
