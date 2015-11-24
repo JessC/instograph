@@ -7,16 +7,14 @@ def index
 end
 
 def new  
-	@post = Post.new(post_params)
-	@post.save
+	@post = Post.new
 end
 
 def create  
 	@post = Post.create(post_params)
 	if @post.save
-		redirect_to posts_path, success: 'File successfully uploaded'
+		redirect_to posts_path
 	else
-		flash.now[:notice] = 'There was an error'
 		render :new
   end
   # redirect_to posts_path

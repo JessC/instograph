@@ -1,5 +1,5 @@
-require 'aws-sdk-v1'
-#require 'aws-sdk'
+#require 'aws-sdk-v1'
+require 'aws-sdk'
 
 AWS.config(
 	region: 'us-west-1',
