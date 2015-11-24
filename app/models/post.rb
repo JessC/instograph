@@ -1,7 +1,6 @@
 class Post < ActiveRecord::Base
 	validates :image, presence: true
 
-#***CURRENTLY Prod & Dev ARE STORED ON S3***
  if Rails.env.test?
     has_attached_file :image, styles: { :medium => "640x" },
     :storage => :filesystem 

@@ -3,11 +3,12 @@ class PostsController < ApplicationController
   # before_action :set_s3_direct_post, only: [:new, :edit, :create, :update] 
 def index
 	@posts = Post.all
-	@user = "USER NAME TO GO HERE EVENTUALLY...maybe"
+	@app_user = "USER NAME TO GO HERE EVENTUALLY...maybe"
 end
 
 def new  
-	@post = Post.new
+	@post = Post.new(post_params)
+	@post.save
 end
 
 def create  
