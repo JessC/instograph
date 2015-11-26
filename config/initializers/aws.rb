@@ -1,7 +1,7 @@
 require 'aws-sdk-v1'
 require 'aws-sdk'
 #or AWS.config???
-Aws.config(
+AWS.config(
 	region: 'us-west-1',
 	aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'], 
 	aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'], 
