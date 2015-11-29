@@ -64,7 +64,7 @@ Rails.application.configure do
   # Amazon Web Services S3
   config.paperclip_defaults = {
     :storage => :fog,
-    :fog_credentials => "instograph/config/aws.yml",
+    :fog_credentials => "#{Rails.root}/config/aws.yml",
     :fog_directory => ENV['S3_BUCKET']
     # :path => "/:class/:attachment/:id_partition/:style/:filename"
     # :fog_credentials => {
