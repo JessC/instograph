@@ -11,7 +11,7 @@ gem 'bootstrap-sass'
 
 gem 'instagram'
 
-gem 'paperclip'
+# gem 'paperclip'
 
 gem 'simple_form'
 
@@ -41,8 +41,7 @@ gem 'aws-sdk-v1'#, require: false
 gem 'aws-sdk'#, '>= 2.0.0', require: false
   
 gem 'fog'
-# gem 'carrierwave' 
-
+gem 'carrierwave' 
 gem 'rmagick'
 
 # Use Capistrano for deployment

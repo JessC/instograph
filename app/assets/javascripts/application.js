@@ -17,9 +17,18 @@
 //= require oms.min
 //= require map
 
+//= require jquery.ui.widget
+//= require z.jquery.fileupload
+
 //= require bootstrap-sprockets
 //= require_tree .
 
+// ########$(function() {
+// ########  $('.directUpload').find("input:file").each(function(i, elem) {
+// ########    var fileInput    = $(elem);
+// ########    console.log(fileInput);
+// ########  });
+// ########});
 
 //HOLD MARKERS
 var marker_container = [];

@@ -59,22 +59,22 @@ Rails.application.configure do
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
-  Paperclip.options[:command_path] = "/usr/local/bin/"
+  # Paperclip.options[:command_path] = "/usr/local/bin/"
 
-  # Amazon Web Services S3
-  config.paperclip_defaults = {
-    :storage => :fog,
-    :fog_credentials => "#{Rails.root}/config/aws.yml",
-    :fog_directory => ENV['S3_BUCKET']
-    # :path => "/:class/:attachment/:id_partition/:style/:filename"
-    # :fog_credentials => {
-    #   :provider => "AWS",
-    #   :region => 'us-west-1',
-    #   :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-    #   :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    # # :scheme => 'https'
-    #   },
-  }
+  # # Amazon Web Services S3
+  # config.paperclip_defaults = {
+  #   :storage => :fog,
+  #   :fog_credentials => "#{Rails.root}/config/aws.yml",
+  #   :fog_directory => ENV['S3_BUCKET']
+  #   # :path => "/:class/:attachment/:id_partition/:style/:filename"
+  #   # :fog_credentials => {
+  #   #   :provider => "AWS",
+  #   #   :region => 'us-west-1',
+  #   #   :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+  #   #   :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  #   # # :scheme => 'https'
+  #   #   },
+  # }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
