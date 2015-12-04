@@ -46,9 +46,9 @@ class PostsController < ApplicationController
 		params.require(:post).permit(:image, :caption)
 	end
 	
-	# def set_post
-	# 	@post = Post.find(params[:id])
-	# end
+	def set_post
+		@post = Post.find(params[:id])
+	end
 	# def set_s3_direct_post
 	# 	@s3_direct_post = Post.find(params[:id])#S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
 	# end

@@ -23,7 +23,7 @@ This is in no way tied to you or any account and is completely anonymous...again
 <%# "DATABASE FILE PATH FOR POST.IMAGE:" %><br>
 <%# post.image.url %>
 
-      <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
+      <%= link_to (image_tag post.image.url, class:'img-responsive'), post_path(post) %>
     </div>
     <p class="caption">
       <%= "Caption:" %>

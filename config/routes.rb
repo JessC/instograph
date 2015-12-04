@@ -21,9 +21,9 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  resources :posts  #<- THE 's' NEEDS TO BE THERE
-   delete 'posts/:id' => 'posts#destroy', as: :delete_pic
-  
+  resources :posts  #<- THE 's' NEEDS TO BE THERE  
+  delete 'posts/:id' => 'posts#destroy', as: :delete_pic
+
 
    get 'map/connect' => 'map#connect', as: :connect
 
@@ -34,8 +34,8 @@ Rails.application.routes.draw do
    get 'map/mediafeed' => 'map#mediafeed', as: :mediafeed
 
    delete 'map/destroy' => 'map#destroy', as: :logout 
-  
   resources :map
+
 
   resources :sessions
 

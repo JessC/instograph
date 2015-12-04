@@ -6,8 +6,10 @@
       </div>
     </div>
     <div class="image center-block">
-      <%= image_tag @post.image.url(:medium) %>
-    </div>
+<!-- PUT ABOVE LINE IN OTHER FORMS IN NON CARRIERWAVE FORMATS -->
+      <%= image_tag @post.image.url %>
+
+</div>
     <p class="caption">
       <%= @post.caption %>
     </p>

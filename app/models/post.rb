@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-	mount_uploader :image, ImageUploader, :mount_on => :image
+	mount_uploader :image, ImageUploader#, :mount_on => :image
 
   # validates :image, presence: true
 
