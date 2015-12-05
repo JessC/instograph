@@ -8,7 +8,7 @@ Aws.config.update({
 
 S3_BUCKET = Aws::S3::Resource.new.bucket(ENV['S3_BUCKET'])
 #S3_BUCKET = AWS::S3.new.buckets[ENV['S3_BUCKET']]
-# AWS.config(:s3_endpoint => 's3-website-us-west-1.amazonaws.com')
+# Aws.config(:s3_endpoint => 's3-website-us-west-1.amazonaws.com')
 #ADDED 11/20/2015
 #DO I NEED THIS FILE, FIND OUT AND DELETE IF NOT
 # if Rails.env == "production"

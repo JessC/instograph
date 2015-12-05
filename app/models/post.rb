@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
 	mount_uploader :image, ImageUploader#, :mount_on => :image
 
-   validates :image, presence: true
+ # validates :image, presence: true
 
  # if Rails.env.test?
  #    has_attached_file :image, styles: { :medium => "640x" },
