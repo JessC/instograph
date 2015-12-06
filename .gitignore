@@ -26,3 +26,5 @@ initializers/instagram.rb
 aws.yml
 
 application.yml
+
+s3.rb
