@@ -11,3 +11,5 @@ require 'rack/handler'
 Rack::Handler::WEBrick = Rack::Handler.get(:puma)
 
 require 'rails/commands'
+
+# require 'fog/aws'

@@ -1,5 +1,5 @@
-require 'aws-sdk-v1'
-require 'aws-sdk'
+# require 'aws-sdk-v1'
+# require 'aws-sdk'
 #or Aws.config??? docs say this but get error...hmmm
 Aws.config.update({
   region: 'us-west-1',
