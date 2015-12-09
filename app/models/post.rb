@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
  #    :storage => :filesystem 
  # else
  #    has_attached_file :image, styles: { :medium => "640x" },
- #    :bucket => "instograph-content", 
+ #    :bucket => ENV['S3_BUCKET'], 
  #    :storage => :fog,
  #    :region => 'us-west-1',
  #    :s3_endpoint => 'https://instograph-content.s3.amazonaws.com/',

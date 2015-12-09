@@ -28,7 +28,7 @@ Rails.application.configure do
   config.paperclip_defaults = {
     :storage => :fog,
     :fog_credentials => "#{Rails.root}/config/aws.yml",
-    :fog_directory => 'instograph-content'
+    :fog_directory => ENV['S3_BUCKET']
      # :fog_credentials => {
      #  :provider => "AWS",
      #  :region => 'us-west-1',

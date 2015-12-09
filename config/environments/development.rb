@@ -7,7 +7,7 @@ Rails.application.configure do
  #  config.paperclip_defaults = {
  #    :storage => :fog,
  #    :fog_credentials => "#{Rails.root}/config/aws.yml",
- #    :fog_directory => 'instograph-content'#,
+ #    :fog_directory => ENV['S3_BUCKET']#,
  #    # :url => ':s3_domain_url', #TEST
  #    # :path => "/:class/:attachment/:id_partition/:style/:filename" #TEST
  # #  :fog_credentials => {
