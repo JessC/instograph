@@ -1,4 +1,4 @@
-#or Aws.config??? docs say this but get error...hmmm
+#AWS.config??? docs say this but get name error...hmmm
 Aws.config.update({
   region: 'us-west-1',
   credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY']),
