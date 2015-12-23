@@ -7,6 +7,7 @@ unless ENV['AWS_ACCESS_KEY_ID'].blank?
 		provider:               'AWS',
 		aws_access_key_id:      ENV['AWS_ACCESS_KEY_ID'],
 		aws_secret_access_key:  ENV['AWS_SECRET_ACCESS_KEY'],
+    # use_iam_profile:        true,
 		region:                 'us-west-1' #default is us-east-1...booo
 	}
 	config.fog_directory = 'instograph-content'
@@ -37,8 +38,6 @@ end
 #   config.fog_public     = false                                        # optional, defaults to true
 #   config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" } # optional, defaults to {}
 # end
-
-# 
 
 
 
