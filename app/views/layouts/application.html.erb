@@ -3,19 +3,21 @@
 <head>
 
 	<title>InstoGraph</title>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/JavaScript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 	<script type='text/javascript' src="https://maps.googleapis.com/maps/api/js?libraries=places">
 	</script>
 
+	
 	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 
 </head>
 <!--  <body onload="initMap()"> -->
-<body>
+<body data-no-turbolink="true">
+	<!-- NEED FOR CCVALID FOR TO WORK WITHOUT PAGE REFRESH-->
 
 	<%=  render 'shared/navbar' %>
 
@@ -30,5 +32,6 @@
 <%= render 'shared/footer' %>
 
 </body>
+
 
 </html>

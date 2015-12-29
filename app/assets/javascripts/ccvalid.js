@@ -1,5 +1,5 @@
-//var ccNumber = "4342-5620-9946-2994"
-
+$(document).on('ready', function() {
+	
 function isValid(ccNumber) {
 	//console.log(ccNumber);   //show original cc number
 	ccNumber = ccNumber.replace(/[^\d]/g, ''); //remove non-numbers
@@ -37,8 +37,6 @@ function isValid(ccNumber) {
 		}
 
 };
-
-$(document).on('ready', function() {
  
 	$('#check').click(function() {
 		isValid($('#formValue').val());
