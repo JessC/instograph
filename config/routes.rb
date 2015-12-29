@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'main/about' => "main#about", as: :about
  
-  get 'main/contact' => "main#contact", as: :contact
+  get 'main/ccvalid' => "main#ccvalid", as: :ccvalid
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
