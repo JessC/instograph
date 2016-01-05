@@ -5,7 +5,11 @@
      <a href="https://instagram.com/">
       <img id="profile_pic" src="<%=@user.profile_picture%>"/></a>
     </div>
-    <h1> MAP PAGE </h1>
+    <!-- <h1> MAP PAGE </h1> -->
+ <div>
+      <%= link_to image_tag('https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/instograph.png', :class => '',  id: 'logo'), "https://github.com/JessC?tab=repositories" %>
+    </div>
+
     <p style="font-size: .7em;">Click on the map to activate scrolling, move cursor off map to cancel.</p>
 
     <div>
@@ -40,9 +44,7 @@
       </a>
     </div> -->
 
-    <div>
-      <%= link_to image_tag('generic_logo.jpg', :class => '',  id: 'logo'), "https://github.com/JessC?tab=repositories" %>
-    </div>
+
   </div>
 
 <div id="container" style="display: inline-block; margin-left: 225px;
