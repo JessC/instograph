@@ -10,12 +10,20 @@ https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/instograph.png
 		Looks like you might be using a mobile device. I recommend using a computer or increasing your screen size.
 		</h3>
 	</div>
-	<p style="font-size: 1.5em;">Welcome to the first draft of Instograph. This app plots the most recent pictures from your instagram feed on Google Maps according to the location they were taken. I'll continue to add features as time permits.
-	You can also upload photos to share with other visitors of this site. It's completely anonymous so there's no user and anyone can delete any photo.</p>
+	<p style="font-size: 1.5em;"><img class="picture-text" src="
+https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/instagram-logo.png"> is a great platform for sharing photos with others. Currently, viewing photos from all your contacts is only provided in a linear format. <img class="picture-text" src="
+https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/instograph.png"> provides a visual interface for viewing your friends pictures according to where they were taken. As long as a photo is geo-tagged, it will appear on Google maps accordingly.</p>
 <!-- <p style="font-size: 1.5em;">
 	The 'About' page has a list of things I'm working on, and most of the technologies I've used.</p> -->
 
-	<h3>Signing In...how does that work? Is it safe?</h3>
+	<div>
+<img id="main-pic" src="
+https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/slomap.jpg">
+	</div>
+
+
+	<u><h5 class="toggle-switch">How signing in works</h5></u>
+	<div style="display: none;" class="toggle-div">
 	<p>To use the map portion you need to sign into your instagram account. To do this I use <a href="http://oauth.net/" target="_blank">oauth</a> You've seen it before if a sites asked you to log in through FB, G+, LinkedIn, etc... It basically allows my site to access minimal information from your account. It doesn't keep anything, it just uses my code to display your information in a particular way. It's the same information any of your friends can see by going on your Instagram account. You can see exactly what information that is <a href="https://instagram.com/accounts/manage_access/" target="_blank">here</a>.</p>
 	<p>
 	What about my login information you ask?...Well, as long as you trust Instagram...this site doesn't handle login information. I'll try to simplify the best I can: 
@@ -23,3 +31,12 @@ https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/instograph.png
 <p>
 	In order for this all to work I had to pre-register my information with Instagram. You can do it too. It's free, just go <a href="https://instagram.com/developer/" target="_blank">here</a>. <br> So, they give me some secret codes to use which I then need to use in my code. When you go to sign in, it's actually sending my codes to Instagram. If everything checks out and I haven't abused my privledges (there's rules), they display a page for you to enter your login information. This page is provided by instagram, not me! (You can see the URL changes to instagram.com when signing in). When you click submit Instagram checks to see that you have an account with them. Then they send my page an authentication code for your session. So whenever my page requests information from Instagram, it also sends the authentication code which represents you so it knows what information to get. Logging out or deleting browser history deletes the access token...which is completely useless outside of this application on your computer anyway.</p> 
 </div>
+</div>
+
+<script>
+        $('.toggle-switch').click(function(){
+        $('.toggle-div').toggle("slow", function(){
+
+        });
+      });
+    </script>
