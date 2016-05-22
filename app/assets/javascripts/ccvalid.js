@@ -28,9 +28,9 @@ function isValid(ccNumber) {
 			$('#card').attr('src', 'https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/visa.png')
 		  } else if (ccNumber.length === 16 && sum % 10 === 0 && ccNumber[0] === "5") {
 			$('#card').attr('src', 'https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/master.png')
-			} else if (ccNumber.length === 16 && sum % 10 === 0 && ccNumber[0] === "3") {
+			} else if (ccNumber.length === 15 && sum % 10 === 0 && ccNumber[0] === "3") {
 			$('#card').attr('src', 'https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/discover.png')
-			} else if (ccNumber.length === 15 && sum % 10 === 0 && ccNumber[0] === "6") {
+			} else if (ccNumber.length === 16 && sum % 10 === 0 && ccNumber[0] === "6") {
 			$('#card').attr('src', 'https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/americanex.png')
 		  } else if (sum % 10 === 0) {
 			$('#card').attr('src', 'https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/generic.png')
