@@ -24,18 +24,18 @@ function isValid(ccNumber) {
 				sum += num;
 			}//console.log(num); //checks if evens were multiplied
 		}
-		if (sum % 10 === 0 && ccNumber[0] === "4") {
-			alert("This is a valid Visa number")
-		  } else if (sum % 10 === 0 && ccNumber[0] === "5") {
-			alert("This is a valid Mastercard number")
-			} else if (sum % 10 === 0 && ccNumber[0] === "3") {
-			alert("This is a valid American Express number")
-			} else if (sum % 10 === 0 && ccNumber[0] === "6") {
-			alert("This is a valid Discover Card number")
+		if (ccNumber.length === 16 && sum % 10 === 0 && ccNumber[0] === "4") {
+			$('#card').attr('src', 'https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/visa.png')
+		  } else if (ccNumber.length === 16 && sum % 10 === 0 && ccNumber[0] === "5") {
+			$('#card').attr('src', 'https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/master.png')
+			} else if (ccNumber.length === 16 && sum % 10 === 0 && ccNumber[0] === "3") {
+			$('#card').attr('src', 'https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/discover.png')
+			} else if (ccNumber.length === 15 && sum % 10 === 0 && ccNumber[0] === "6") {
+			$('#card').attr('src', 'https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/americanex.png')
 		  } else if (sum % 10 === 0) {
-			alert("This is a valid credit card number")
+			$('#card').attr('src', 'https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/generic.png')
 		  } else {
-			alert("Sorry, not a valid number")
+			$('#card').attr('src', 'https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/notcard.png')
 		}
 
 };
