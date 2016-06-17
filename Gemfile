@@ -68,5 +68,9 @@ group :production do
   # Use PostgreSQL as the database for Active Record
   gem 'pg', '~> 0.18.3'
 
+  #TURNS OFF ASSET PIPELINE MESSAGE LOG
+  #TO TOGGLE, GO TO config/application.rb
+  gem 'quiet_assets'
+
 end
 
