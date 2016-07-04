@@ -68,19 +68,34 @@ clear:both;
 <div class="hccp-resetdiv"></div>
 </div>
 <br>
-           <label for="rgb_value">Enter an RGB value or paste from below</label>
-            <form action onblur="isThatAColor(this.elements[0].value); return false;">
-             <div>
-              <input type="text" value onblur="isThatAColor(this.value)" placeholder="rgb(255,255,255)">
-              </div>
-             </form>
-          <div id="result-wrap">
-      <div id="result" style="background-color: #ffffff;"></div>
-       </div>     
+
+<!-- SIMPLE COLOR PICKER AND RESULTS -->
+<label for="rgb_value">Enter an RGB value or paste from below</label>
+<form action onblur="isThatAColor(this.elements[0].value); return false;">
+ <div>
+  <input type="text" onblur="isThatAColor(this.value)" placeholder="rgb(255,255,255)">
+</div>
+</form>
+<div id="result-wrap">
+  <div id="result" style="background-color: #ffffff;"></div>
+</div>   
+// <script>
+// $(input).blur(function() {
+//   alert( "Handler for .blur() called." );
+// });
+
+
+
+// $('.special').attr('id', 'mycolor');
+
+// var addSomething = 
+// document.getElementById("mycolor").addEventListener("blur", isThatAColor(this.value));
+
+// addSomething.blur.isThatAColor(this.value);</script>
 
 <br><br><br><br>
 
-<h3 style="color: tomato; margin-left: 150px; margin-right: 150px;">Updated security related to this app which blocked access for uploading pics, I hope to fix it sometime in January when I have more time.</h3>
+<h3 style="color: tomato; margin-left: 150px; margin-right: 150px;">Removed functionality of upload feature for security purposes.</h3>
 
 <h4 style="margin-left: 150px; margin-right: 150px;"> 
 You can upload pictures now!!! Theres no real point <i>yet</i>, it was more for me to get experience working with the technology to make it happen.</h4>
@@ -117,30 +132,30 @@ This is in no way tied to you or any account and is completely anonymous...again
 
 
 <script type="text/JavaScript">
-           function isThatAColor(s) {
-                var color = new RGBColor(s);
-                if (color.ok) {
-                    document.getElementById('result').style.backgroundColor
-                        = 'rgb(' + color.r + ', ' + color.g + ', ' + color.b + ')';
-                    document.getElementById('result-text').innerHTML
-                        = 'Red: ' + color.r
-                          + '<br />Green: ' + color.g
-                          + '<br />Blue: ' + color.b
-                          + '<br />RGB: ' + color.toRGB()
-                          + '<br />Hex: ' + color.toHex()
-                          ;
-                } else {
-                    document.getElementById('result-text').innerHTML = 'Never heard of such a color :(';
-                    document.getElementById('result').style.backgroundColor
-                        = 'rgb(255, 255, 255)';
-                }
-            }
+function isThatAColor(s) {
+  var color = new RGBColor(s);
+  if (color.ok) {
+    document.getElementById('result').style.backgroundColor
+    = 'rgb(' + color.r + ', ' + color.g + ', ' + color.b + ')';
+    document.getElementById('result-text').innerHTML
+    = 'Red: ' + color.r
+    + '<br />Green: ' + color.g
+    + '<br />Blue: ' + color.b
+    + '<br />RGB: ' + color.toRGB()
+    + '<br />Hex: ' + color.toHex()
+    ;
+  } else {
+    document.getElementById('result-text').innerHTML = 'Never heard of such a color :(';
+      document.getElementById('result').style.backgroundColor
+      = 'rgb(255, 255, 255)';
+    }
+  }
 
-            function showHelp() {
-                var color = new RGBColor('');
-                document.getElementById('help').innerHTML = '';
-                document.getElementById('help').appendChild(color.getHelpXML());
-            };
+  function showHelp() {
+    var color = new RGBColor('');
+    document.getElementById('help').innerHTML = '';
+    document.getElementById('help').appendChild(color.getHelpXML());
+  };
 
 </script>
 

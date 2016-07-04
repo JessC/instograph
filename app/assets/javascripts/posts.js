@@ -385,9 +385,7 @@ function RGBColor(color_string)
             } catch(e){}
         }
         return xml;
-
     }
-
 }
 
 
@@ -416,3 +414,8 @@ function RGBColor(color_string)
                 document.getElementById('help').innerHTML = '';
                 document.getElementById('help').appendChild(color.getHelpXML());
             }
+
+
+
+
+
