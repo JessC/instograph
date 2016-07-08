@@ -3,8 +3,10 @@
 /* START - HTML5 Canvas Hex/RGB Color Picker */
 
 .hccp-outerdiv {
-display:inline;
+display:block;
 position:inherit;
+margin-right: auto;
+margin-left: auto;
 }
 
 .hccp-canvas {
@@ -26,20 +28,21 @@ height: 20px;
 .hccp-resetdiv {
 clear:both;
 }
-            #result {
-                //margin: 5px;
-                width: 60px;
-                height: 60px;
-            }
-            #result-wrap {
-                border: 1px solid #999999;
-                width: 60px;
-                height: 60px;
-                margin: 5px;
-            }
-            body {
-                font-family: Arial;
-            }
+#result {
+  width: 160px;
+  height: 50px;
+  border-radius: 10px;
+}
+#result-wrap {
+  //border: 1px solid #999999;
+  width: 160px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 10px;
+}
+body {
+  font-family: Arial;
+}
 /* END - HTML5 Canvas Hex/RGB Color Picker */
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
@@ -71,7 +74,7 @@ clear:both;
 
 <!-- SIMPLE COLOR PICKER AND RESULTS -->
 <label for="rgb_value">Enter an RGB value or paste from below</label>
-<form action onblur="isThatAColor(this.elements[0].value); return false;">
+<form action oninput="isThatAColor(this.elements[0].value); return false;">
  <div>
   <input type="text" onblur="isThatAColor(this.value)" placeholder="rgb(255,255,255)">
 </div>
@@ -79,7 +82,7 @@ clear:both;
 <div id="result-wrap">
   <div id="result" style="background-color: #ffffff;"></div>
 </div>   
-// <script>
+ <script>
 // $(input).blur(function() {
 //   alert( "Handler for .blur() called." );
 // });

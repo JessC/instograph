@@ -6,7 +6,7 @@ $( document ).ready(function() {
 // set initial variables and grab image
 var img = new Image();
 img.crossOrigin = "";
-img.src = 'https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/color-picker.png';
+img.src = 'https://s3-us-west-1.amazonaws.com/instograph-content/pic_storage/color_spectrum.jpg';
 var canvas = document.getElementById('hccp-FindCanvasColor');
 var context = canvas.getContext('2d');
 
