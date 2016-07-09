@@ -3,7 +3,7 @@
 /* START - HTML5 Canvas Hex/RGB Color Picker */
 
 .hccp-outerdiv {
-display:block;
+display: table;
 position:inherit;
 margin-right: auto;
 margin-left: auto;
@@ -28,6 +28,11 @@ height: 20px;
 .hccp-resetdiv {
 clear:both;
 }
+
+#results {
+  text-align: -webkit-center;
+}
+
 #result {
   width: 160px;
   height: 50px;
@@ -73,6 +78,7 @@ body {
 <br>
 
 <!-- SIMPLE COLOR PICKER AND RESULTS -->
+<div id="results">
 <label for="rgb_value">Enter an RGB value or paste from below</label>
 <form action oninput="isThatAColor(this.elements[0].value); return false;">
  <div>
@@ -81,7 +87,11 @@ body {
 </form>
 <div id="result-wrap">
   <div id="result" style="background-color: #ffffff;"></div>
-</div>   
+</div>  
+</div>
+
+
+
  <script>
 // $(input).blur(function() {
 //   alert( "Handler for .blur() called." );
