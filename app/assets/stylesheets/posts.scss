@@ -1,3 +1,54 @@
 // Place all the styles related to the posts controller here. 
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* START - HTML5 Canvas Hex/RGB Color Picker */
+
+.hccp-outerdiv {
+display: table;
+position:inherit;
+margin-right: auto;
+margin-left: auto;
+}
+
+.hccp-canvas {
+border:1px solid #aaaaaa;
+float:left;
+}
+
+.hccp-innerdiv {
+float:left;
+font-family:Courier,monospace;
+margin-left:15px;
+}
+
+.hccp-colorbar {
+width:150px;
+height: 20px;
+}
+
+.hccp-resetdiv {
+clear:both;
+}
+
+#results {
+  text-align: -webkit-center;
+}
+
+#result {
+  width: 160px;
+  height: 50px;
+  border-radius: 10px;
+}
+#result-wrap {
+  //border: 1px solid #999999;
+  width: 160px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 10px;
+}
+body {
+  font-family: Arial;
+}
+
+/* END - HTML5 Canvas Hex/RGB Color Picker */
