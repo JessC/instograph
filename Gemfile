@@ -70,7 +70,7 @@ group :production do
 
   #TURNS OFF ASSET PIPELINE MESSAGE LOG
   #TO TOGGLE, GO TO config/application.rb
-  gem 'quiet_assets'
+  #gem 'quiet_assets'
 
 end
 
