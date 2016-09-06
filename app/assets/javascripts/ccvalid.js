@@ -1,6 +1,6 @@
 //random number 2647883937474900
 
-$(document).on('ready', function() {
+$(document).on("ready", function() {
 	
 	function isValid(ccNumber) {
 	//console.log(ccNumber);   //show original cc number

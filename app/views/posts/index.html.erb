@@ -35,22 +35,6 @@
 </div>  
 </div>
 
-
-
- <script>
-// $(input).blur(function() {
-//   alert( "Handler for .blur() called." );
-// });
-
-
-
-// $('.special').attr('id', 'mycolor');
-
-// var addSomething = 
-// document.getElementById("mycolor").addEventListener("blur", isThatAColor(this.value));
-
-// addSomething.blur.isThatAColor(this.value);</script>
-
 <br><br><br><br>
 
 <h3 style="color: tomato; margin-left: 150px; margin-right: 150px;">Removed functionality of upload feature for security purposes.</h3>
@@ -89,32 +73,5 @@ This is in no way tied to you or any account and is completely anonymous...again
 </div>
 
 
-<script type="text/JavaScript">
-function isThatAColor(s) {
-  var color = new RGBColor(s);
-  if (color.ok) {
-    document.getElementById('result').style.backgroundColor
-    = 'rgb(' + color.r + ', ' + color.g + ', ' + color.b + ')';
-    document.getElementById('result-text').innerHTML
-    = 'Red: ' + color.r
-    + '<br />Green: ' + color.g
-    + '<br />Blue: ' + color.b
-    + '<br />RGB: ' + color.toRGB()
-    + '<br />Hex: ' + color.toHex()
-    ;
-  } else {
-    document.getElementById('result-text').innerHTML = 'Never heard of such a color :(';
-      document.getElementById('result').style.backgroundColor
-      = 'rgb(255, 255, 255)';
-    }
-  }
-
-  function showHelp() {
-    var color = new RGBColor('');
-    document.getElementById('help').innerHTML = '';
-    document.getElementById('help').appendChild(color.getHelpXML());
-  };
-
-</script>
 
 
